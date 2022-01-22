@@ -1,1 +1,1 @@
-# nama-terminal-workstation
+# Namakete's terminal workstation
