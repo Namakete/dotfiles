@@ -1,5 +1,6 @@
 # Namakete's terminal workstation
 
+![logo](https://github.com/Namakete/terminal-workstation/blob/main/images/image.png)
 ## Contents
 
 - Preset
