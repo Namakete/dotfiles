@@ -1,6 +1,6 @@
 # Namakete's terminal workstation
 
-![logo](https://github.com/Namakete/terminal-workstation/blob/main/images/image.png)
+![logo](https://github.com/Namakete/terminal-workstation/blob/main/images/visual-image.png)
 
 ```Warning: Configuration can be updated over time!```
 
