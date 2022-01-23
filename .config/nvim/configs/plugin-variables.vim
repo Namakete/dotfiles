@@ -11,5 +11,9 @@ let g:coc_global_extensions=[
             \'coc-solargraph',
             \'coc-snippets',
             \'coc-eslint',
-            \'coc-pyright'
-            \]
+            \'coc-pyright',
+			\'coc-yaml',
+			\'coc-tslint-plugin',
+			\'coc-emmet',
+			\'coc-html',
+			\]
