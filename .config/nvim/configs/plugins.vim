@@ -21,7 +21,7 @@ Plug 'leafgarland/typescript-vim'
 Plug 'maxmellon/vim-jsx-pretty'
 Plug 'pangloss/vim-javascript'
 Plug 'Vimjas/vim-python-pep8-indent'
-
+Plug 'dart-lang/dart-vim-plugin'
 "Window manager
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
