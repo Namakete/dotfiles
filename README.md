@@ -2,7 +2,7 @@
 
 ![logo](https://github.com/Namakete/terminal-workstation/blob/main/images/visual-image.png)
 
-```Warning: Configuration can be updated over time!```
+```Warning: Configuration can be updated!```
 
 ## Contents
 
@@ -14,14 +14,14 @@
 - [Font](https://github.com/ryanoasis/nerd-fonts#patched-fonts) - (recommendation: [Hack Nerd Font](https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/Hack.zip))
 - [Windows Terminal](https://www.microsoft.com/en-US/p/windows-terminal/9n0dx20hk701?activetab=pivot:overviewtab) ( [Windows PowerShell](https://docs.microsoft.com/en-us/powershell/) / [Linux Ubuntu](https://www.microsoft.com/en-us/p/ubuntu/9nblggh4msv6#activetab=pivot:overviewtab) )
 - [Git](https://git-scm.com/)
-- [Node.js](https://nodejs.org/en/) ( latest )
-- [Npm](https://www.npmjs.com/) ( latest )
+- [Node.js](https://nodejs.org/en/) (latest)
+- [Npm](https://www.npmjs.com/) (latest)
 ## Vim (Neovim) setup
 
 ###### **Requires Neovim - >= 0.6**
 - [Vim-plug](https://github.com/junegunn/vim-plug) - A minimalist Vim plugin manager
 - [Telescope.nvim](https://github.com/nvim-telescope/telescope.nvim) - A highly extendable fuzzy finder over lists
-- [Coc.nvim](https://github.com/neoclide/coc.nvim) ( Plug ) - True snippet and additional text editing support
+- [Coc.nvim](https://github.com/neoclide/coc.nvim) (Plug) - True snippet and additional text editing support
 ## Shell setup (Linux)  
 - [Fish shell](https://fishshell.com/) - Fish is a **smart** and user-friendly command line
 shell for **Linux**, **macOS**
