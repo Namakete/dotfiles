@@ -6,9 +6,8 @@
 
 ## Contents
 
-- Preset
-- Vim (Neovim) configu
-- fish config
+- Vim (Neovim) config
+- Fish config
 - PowerShell config
 
 ## Preset
