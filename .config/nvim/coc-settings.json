@@ -1,0 +1,19 @@
+{
+  "clangd.path": "~\\AppData\\Local\\coc\\extensions\\coc-clangd-data\\install\\13.0.0\\clangd_13.0.0\\bin\\clangd.exe",
+	"perl": {
+        "enable": true,
+        "debugAdapterPort": "13604",
+        "logLevel": 1
+  },
+	"languageserver": {
+  "fortran": {
+    "command": "fortls",
+    "filetypes": ["fortran"],
+    "rootPatterns": [".fortls", ".git/"]
+  }
+}
+	
+
+}
+
+
