@@ -22,7 +22,7 @@
 - [Vim-plug](https://github.com/junegunn/vim-plug) - A minimalist Vim plugin manager
 - [Telescope.nvim](https://github.com/nvim-telescope/telescope.nvim) - A highly extendable fuzzy finder over lists
 - [Coc.nvim](https://github.com/neoclide/coc.nvim) (Plug) - True snippet and additional text editing support
-## Shell setup (Linux)  
+## Shell setup (Linux/MacOS)  
 - [Fish shell](https://fishshell.com/) - Fish is a **smart** and user-friendly command line
 shell for **Linux**, **macOS**
 - [Fisher](https://github.com/jorgebucaran/fisher) - A plugin manager for Fish—the friendly interactive shell
