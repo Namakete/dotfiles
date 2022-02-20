@@ -5,6 +5,9 @@ call plug#begin()
 	Plug 'kyazdani42/nvim-web-devicons'
 	Plug 'nvim-lua/plenary.nvim'
 	Plug 'nvim-telescope/telescope.nvim'
+	Plug 'preservim/nerdtree'
+	Plug 'Xuyuanp/nerdtree-git-plugin'
+	Plug 'ryanoasis/vim-devicons'
 	endif
 call plug#end()
 
