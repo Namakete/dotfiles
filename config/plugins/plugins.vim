@@ -8,6 +8,11 @@ call plug#begin()
 	Plug 'preservim/nerdtree'
 	Plug 'Xuyuanp/nerdtree-git-plugin'
 	Plug 'ryanoasis/vim-devicons'
+	Plug 'lukas-reineke/indent-blankline.nvim'
+  Plug 'neoclide/coc.nvim', {'branch': 'release'}
+	Plug 'folke/trouble.nvim'
+	Plug 'neovim/nvim-lspconfig'
+	Plug 'glepnir/lspsaga.nvim'
 	endif
 call plug#end()
 
