@@ -1,2 +1,6 @@
 require "user.configuration"
 require "user.keymaps"
+require "user.packer"
+require "user.nerdtree"
+require "user.theme"
+require "user.telescope"
