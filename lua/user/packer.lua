@@ -4,7 +4,9 @@ require('packer').startup(function()
     use 'wbthomason/packer.nvim' -- Packer management plugin
     use 'projekt0n/github-nvim-theme' -- Nvim theme (GitHub)
     use 'kyazdani42/nvim-web-devicons' --  Icons files
-    
+    use "windwp/nvim-autopairs" -- Autopairs, integrates with both cmp and treesitter
+    use "antoinemadec/FixCursorHold.nvim" -- This is needed to fix lsp doc highlight
+
     -- NERDTree
     use 'https://github.com/preservim/nerdtree' -- File system explorer
     
@@ -27,4 +29,9 @@ require('packer').startup(function()
     use "williamboman/nvim-lsp-installer" -- Simple to use language server installer
     use "tamago324/nlsp-settings.nvim" -- Language server settings defined in json for
     use "jose-elias-alvarez/null-ls.nvim" -- For formatters and linters
+
+    -- Snippets
+    use "L3MON4D3/LuaSnip" -- Snippet engine
+    use "rafamadriz/friendly-snippets" -- A bunch of snippets to use
+    require("luasnip.loaders.from_vscode").load()
 end)

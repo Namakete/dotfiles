@@ -36,7 +36,7 @@ local kind_icons = {
   File = "",
   Reference = "",
   Folder = "",
-  EnumMember  "",
+  EnumMember = "",
   Constant = "",
   Struct = "",
   Event = "",
