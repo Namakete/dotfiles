@@ -47,4 +47,5 @@ require('packer').startup(function()
     -- Terminal
     use 'https://github.com/tc50cal/vim-terminal'
     
+
 end)
