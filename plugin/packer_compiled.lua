@@ -179,10 +179,20 @@ _G.packer_plugins = {
     path = "/Users/namakete/.local/share/nvim/site/pack/packer/start/tmuxline.vim",
     url = "https://github.com/edkolev/tmuxline.vim"
   },
+  ["trouble.nvim"] = {
+    loaded = true,
+    path = "/Users/namakete/.local/share/nvim/site/pack/packer/start/trouble.nvim",
+    url = "https://github.com/folke/trouble.nvim"
+  },
   ["vim-autoformat"] = {
     loaded = true,
     path = "/Users/namakete/.local/share/nvim/site/pack/packer/start/vim-autoformat",
     url = "https://github.com/vim-autoformat/vim-autoformat"
+  },
+  ["vim-devicons"] = {
+    loaded = true,
+    path = "/Users/namakete/.local/share/nvim/site/pack/packer/start/vim-devicons",
+    url = "https://github.com/ryanoasis/vim-devicons"
   }
 }
 

@@ -4,7 +4,7 @@ if not status_ok then
 end
 
 local keymap = vim.api.nvim_set_keymap
-keymap('n', '<leader>', ':Telescope find_files<CR>', {noremap = true}) -- Find files
+keymap('n', '<leader>f', ':Telescope find_files<CR>', {noremap = true}) -- Find files
 
 local actions = require "telescope.actions"
 
