@@ -18,6 +18,9 @@ require('packer').startup(function()
         requires = { {'nvim-lua/plenary.nvim'} }
     }
     
+    -- Autoformat
+    use 'https://github.com/vim-autoformat/vim-autoformat'
+
     -- CMP plugins
     use 'hrsh7th/nvim-cmp'                      -- The completion plugin
     use 'hrsh7th/cmp-buffer'                    -- Buffer completions
