@@ -193,6 +193,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/namakete/.local/share/nvim/site/pack/packer/start/vim-devicons",
     url = "https://github.com/ryanoasis/vim-devicons"
+  },
+  ["vim-terminal"] = {
+    loaded = true,
+    path = "/Users/namakete/.local/share/nvim/site/pack/packer/start/vim-terminal",
+    url = "https://github.com/tc50cal/vim-terminal"
   }
 }
 

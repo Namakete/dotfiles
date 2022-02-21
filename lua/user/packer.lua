@@ -22,7 +22,7 @@ require('packer').startup(function()
     -- Autoformat
     use 'https://github.com/vim-autoformat/vim-autoformat'
 
-    -- CMP plugins
+    -- CMP plugin
     use 'hrsh7th/nvim-cmp'  -- The completion plugin
     use 'hrsh7th/cmp-buffer'  -- Buffer completions
     use 'hrsh7th/cmp-path'  -- Path completions
@@ -40,7 +40,10 @@ require('packer').startup(function()
     use 'L3MON4D3/LuaSnip'  -- Snippet engine
     use 'rafamadriz/friendly-snippets'  -- A bunch of snippets to use
 
-    --Trouble
+    -- Trouble
     use 'folke/trouble.nvim'
     require('luasnip.loaders.from_vscode').load()
+
+    -- Terminal
+    use 'https://github.com/tc50cal/vim-terminal'
 end)
