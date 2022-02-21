@@ -6,7 +6,9 @@ require('packer').startup(function()
     use 'kyazdani42/nvim-web-devicons'          --  Icons files
     use 'windwp/nvim-autopairs'                 -- Autopairs, integrates with both cmp and treesitter
     use 'antoinemadec/FixCursorHold.nvim'       -- This is needed to fix lsp doc highlight
-    use 'nvim-lualine/lualine.nvim'    
+    use 'nvim-lualine/lualine.nvim'
+    use 'https://github.com/edkolev/tmuxline.vim'
+
     -- NERDTree
     use 'https://github.com/preservim/nerdtree' -- File system explorer
     
