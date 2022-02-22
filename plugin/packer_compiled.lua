@@ -74,11 +74,6 @@ _G.packer_plugins = {
     path = "/Users/namakete/.local/share/nvim/site/pack/packer/start/FixCursorHold.nvim",
     url = "https://github.com/antoinemadec/FixCursorHold.nvim"
   },
-  ["LanguageClient-neovim"] = {
-    loaded = true,
-    path = "/Users/namakete/.local/share/nvim/site/pack/packer/start/LanguageClient-neovim",
-    url = "https://github.com/autozimu/LanguageClient-neovim"
-  },
   LuaSnip = {
     loaded = true,
     path = "/Users/namakete/.local/share/nvim/site/pack/packer/start/LuaSnip",
@@ -108,6 +103,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/namakete/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
     url = "https://github.com/saadparwaiz1/cmp_luasnip"
+  },
+  ["coc.nvim"] = {
+    loaded = true,
+    path = "/Users/namakete/.local/share/nvim/site/pack/packer/start/coc.nvim",
+    url = "https://github.com/neoclide/coc.nvim"
   },
   ["friendly-snippets"] = {
     loaded = true,
@@ -208,6 +208,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/namakete/.local/share/nvim/site/pack/packer/start/vim-terminal",
     url = "https://github.com/tc50cal/vim-terminal"
+  },
+  vimf90 = {
+    loaded = true,
+    path = "/Users/namakete/.local/share/nvim/site/pack/packer/start/vimf90",
+    url = "https://github.com/rudrab/vimf90"
   }
 }
 

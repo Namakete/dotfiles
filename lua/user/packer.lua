@@ -53,6 +53,8 @@ require('packer').startup(function()
     run = ":TSUpdate",
     }
 
-    use 'https://github.com/autozimu/LanguageClient-neovim'
+    use 'neoclide/coc.nvim'
+
+    use 'rudrab/vimf90'
 
 end)
