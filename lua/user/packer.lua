@@ -47,10 +47,12 @@ require('packer').startup(function()
     -- Terminal
     use 'https://github.com/tc50cal/vim-terminal'
 
-    --
+    -- Treesitter
     use {
     "nvim-treesitter/nvim-treesitter",
     run = ":TSUpdate",
     }
+
+    use 'https://github.com/autozimu/LanguageClient-neovim'
 
 end)
