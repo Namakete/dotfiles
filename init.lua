@@ -12,4 +12,3 @@ require('user.trouble')
 require('user.terminal')
 require('user.treesitter')
 
-
