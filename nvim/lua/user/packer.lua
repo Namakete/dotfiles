@@ -8,7 +8,6 @@ require('packer').startup(function()
     use 'windwp/nvim-autopairs' -- Autopairs, integrates with both cmp and treesitter
     use 'antoinemadec/FixCursorHold.nvim' -- This is needed to fix lsp doc highlight
     use 'nvim-lualine/lualine.nvim'
-    use 'https://github.com/edkolev/tmuxline.vim'
 
     -- NERDTree
     use 'https://github.com/preservim/nerdtree' -- File system explorer
@@ -20,7 +19,7 @@ require('packer').startup(function()
     }
     
     -- Autoformat
-    use 'https://github.com/vim-autoformat/vim-autoformat'
+    use 'https://github.com/vim-autoformat/vim-autoformat' -- Autoformat code
 
     -- CMP plugin
     use 'hrsh7th/nvim-cmp'  -- The completion plugin
@@ -41,11 +40,11 @@ require('packer').startup(function()
     use 'rafamadriz/friendly-snippets'  -- A bunch of snippets to use
 
     -- Trouble
-    use 'folke/trouble.nvim'
+    use 'folke/trouble.nvim' -- Debug panel
     require('luasnip.loaders.from_vscode').load()
 
     -- Terminal
-    use 'https://github.com/tc50cal/vim-terminal'
+    use 'https://github.com/tc50cal/vim-terminal' -- Terminal in (Neo)vim
 
     -- Treesitter
     use {

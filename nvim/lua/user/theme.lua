@@ -10,10 +10,9 @@
 --    light_default
 --    light_colorblind
 
-
 -- Example config in Lua
 require("github-theme").setup({
-  theme_style = "dark_default",
+  theme_style = "dimmed",
   function_style = "italic",
   sidebars = {"qf", "vista_kind", "terminal", "packer"},
 
@@ -31,7 +30,6 @@ require("github-theme").setup({
   end
 })
 
-
 -- Normal text style
 require("github-theme").setup({
   comment_style = "NONE",
@@ -40,7 +38,6 @@ require("github-theme").setup({
   variable_style = "NONE"
   -- other config
 })
-
 
 -- Minimal config
 require("github-theme").setup({
