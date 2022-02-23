@@ -51,5 +51,8 @@ require('packer').startup(function()
     "nvim-treesitter/nvim-treesitter",
     run = ":TSUpdate",
     }
-
+    
+    use 'https://github.com/hankchiutw/flutter-reload.vim'
+    use 'dart-lang/dart-vim-plugin'
+    use 'thosakwe/vim-flutter'
 end)
