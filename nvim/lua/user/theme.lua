@@ -12,7 +12,7 @@
 
 -- Example config in Lua
 require("github-theme").setup({
-  theme_style = "dimmed",
+  theme_style = "dark_default",
   function_style = "italic",
   sidebars = {"qf", "vista_kind", "terminal", "packer"},
 
@@ -35,13 +35,7 @@ require("github-theme").setup({
   comment_style = "NONE",
   keyword_style = "NONE",
   function_style = "NONE",
-  variable_style = "NONE"
-  -- other config
-})
-
--- Minimal config
-require("github-theme").setup({
-  dark_sidebar = false,
-  -- other config
+  variable_style = "NONE",
+  dark_sidebar = true
 })
 

@@ -11,4 +11,5 @@ require('user.autoformat')
 require('user.trouble')
 require('user.terminal')
 require('user.treesitter')
-
+require('user.notify')
+require('user.blanline')

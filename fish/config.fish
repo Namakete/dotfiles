@@ -1,5 +1,7 @@
 oh-my-posh --init --shell fish --config ~/emodipt.json | source
 
+set PATH ~/development/flutter/bin $PATH
+
 set fish_greeting ""
 
 set -gx TERM xterm-256color

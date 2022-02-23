@@ -55,4 +55,13 @@ require('packer').startup(function()
     use 'https://github.com/hankchiutw/flutter-reload.vim'
     use 'dart-lang/dart-vim-plugin'
     use 'thosakwe/vim-flutter'
+
+    use 'https://github.com/rcarriga/nvim-notify'
+
+    use 'lukas-reineke/indent-blankline.nvim'
+
+    use {
+    'lewis6991/gitsigns.nvim',
+    requires = {'nvim-lua/plenary.nvim'},
+}
 end)
