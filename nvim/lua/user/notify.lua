@@ -36,12 +36,19 @@ require("notify").setup({
   },
 })
 
+-- Simply call the module with a message!
 require("notify")("My super important message")
 
+-- Other plugins can use the notification windows by setting it as your default notify function
 vim.notify = require("notify")
 
+-- You can supply a level to change the border highlighting
 vim.notify("This is an error message", "error")
 
+-- There are a number of custom options that can be supplied in 
+-- a table as the third argument. See :h NotifyOptions for details.
+
+-- Sample code for the first GIF above:
 local plugin = "My Awesome Plugin"
 
 vim.notify("This is an error message.\nSomething went wrong!", "error", {
@@ -64,7 +71,9 @@ vim.notify("This is an error message.\nSomething went wrong!", "error", {
   end,
 })
 
+-- You can also use plenary's async library to avoid using callbacks:
 local async = require("plenary.async")
+
 local notify = require("notify").async
 
 async.run(function()
