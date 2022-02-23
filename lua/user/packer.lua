@@ -53,8 +53,4 @@ require('packer').startup(function()
     run = ":TSUpdate",
     }
 
-    use 'neoclide/coc.nvim'
-
-    use 'rudrab/vimf90'
-
 end)

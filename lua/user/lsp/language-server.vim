@@ -1,47 +1,17 @@
-" Ensure correct highlighting for 
-" Fortran free-form source code 
-" and turn syntax highlighting on
-let fortran_free_source=1
-let fortran_do_enddo=1
-filetype plugin indent on
-syntax on
+if has("nvim")
+  let g:plug_home = stdpath('data') . '/plugged'
+endif
 
-" Turn on line numbers and
-" row/column numbers
-set nu
-set ruler
+call plug#begin()
+if has("nvim")
+  Plug 'neoclide/coc.nvim', {'branch': 'master', 'do': 'yarn install --frozen-lockfile'}
+endif
+call plug#end()
 
-" Make vim echo commands as they
-" are being entered.
-set showcmd
+let g:coc_start_at_startup = 0
+augroup coc
+  autocmd!
+  autocmd VimEnter * :silent CocStart
+augroup end
 
-" Set tabstops to two spaces
-" and ensure tab characters are
-" expanded into spaces.
-set smarttab
-set expandtab
-set tabstop=2
-set shiftwidth=2
-
-" Fix backspace key
-set bs=2
-
-" Set up searching so
-" that it jumps to matches
-" as the word is being
-" entered and is case-insensitive
-set incsearch
-set ignorecase
-set smartcase
-
-" Uncomment the following lines to make
-" vim automatically create a backup copy
-" each time a file is edited.
-"
-" If you enable this feature, be sure to
-"   
-"   mkdir ~/codeBackups
-"
-" or it won't work.
-"set backupdir=~/codeBackups
-"set backup
+let fortran_dep_install=3
