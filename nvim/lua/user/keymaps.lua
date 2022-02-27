@@ -6,7 +6,7 @@ keymap('n', '<c-a>', 'gg<S-v>G', {})    -- Select all text
 keymap('n', 'w<left>', '<c-w>h', {})    -- Move left window
 keymap('n', 'w<right>', '<c-w>l', {})   -- Move right window
 keymap('n', 'w<up>', '<c-w>k', {})      -- Move up window
-keymap('n', 'w<down>', '<c-w>j', {})    -- Move down window
+keymap('n', 'w<down>', '<c-w>j', {})    -- Move down window'
 
 
 

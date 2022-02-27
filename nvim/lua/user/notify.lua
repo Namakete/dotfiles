@@ -37,40 +37,11 @@ require("notify").setup({
 })
 
 
--- Other plugins can use the notification windows by setting it as your default notify function
-vim.notify = require("notify")
 
 
--- Sample code for the first GIF above:
-local plugin = "My Awesome Plugin"
-
-vim.notify("This is an error message.\nSomething went wrong!", "error", {
-  title = plugin,
-  on_open = function()
-    vim.notify("Attempting recovery.", vim.lsp.log_levels.WARN, {
-      title = plugin,
-    })
-    local timer = vim.loop.new_timer()
-    timer:start(2000, 0, function()
-      vim.notify({ "Fixing problem.", "Please wait..." }, "info", {
-        title = plugin,
-        timeout = 3000,
-        on_close = function()
-          vim.notify("Problem solved", nil, { title = plugin })
-          vim.notify("Error code 0x0395AF", 1, { title = plugin })
-        end,
-      })
-    end)
-  end,
-})
-
--- You can also use plenary's async library to avoid using callbacks:
-local async = require("plenary.async")
-
-local notify = require("notify").async
-
-async.run(function()
-  notify("Let's wait for this to close").events.close()
-  notify("It closed!")
-end)
-
+local present, notify = pcall(require, 'notify')
+if not present then
+  require('vima.utils').notify_missing('nvim-notify')
+end
+-- redirect all notifications to this module
+vim.notify = notify
