@@ -7,6 +7,10 @@ keymap('n', 'w<left>', '<c-w>h', {})    -- Move left window
 keymap('n', 'w<right>', '<c-w>l', {})   -- Move right window
 keymap('n', 'w<up>', '<c-w>k', {})      -- Move up window
 keymap('n', 'w<down>', '<c-w>j', {})    -- Move down window'
-keymap('n', '<F9>', ':%s/\r//g', {})
+keymap('n', '<F7>', ':%s/\r//g', {})
+keymap('n', '<F8>', ':make clean<CR>', {})
+keymap('n', '<F10>', ':make run<CR>', {})
+keymap('n', '<F9>', ':make debug<CR>', {})
+
 
 
