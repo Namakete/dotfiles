@@ -204,6 +204,16 @@ _G.packer_plugins = {
     path = "/Users/namakete/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
   },
+  ["tmuxline.vim"] = {
+    loaded = true,
+    path = "/Users/namakete/.local/share/nvim/site/pack/packer/start/tmuxline.vim",
+    url = "https://github.com/edkolev/tmuxline.vim"
+  },
+  ["toggleterm.nvim"] = {
+    loaded = true,
+    path = "/Users/namakete/.local/share/nvim/site/pack/packer/start/toggleterm.nvim",
+    url = "https://github.com/akinsho/toggleterm.nvim"
+  },
   ["trouble.nvim"] = {
     loaded = true,
     path = "/Users/namakete/.local/share/nvim/site/pack/packer/start/trouble.nvim",
