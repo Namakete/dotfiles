@@ -9,9 +9,11 @@
 - PowerShell config
 
 ## Preset
-- [Font](https://github.com/ryanoasis/nerd-fonts#patched-fonts) - (recommendation: [Hack Nerd Font](https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/Hack.zip))
-- [Windows Terminal](https://www.microsoft.com/en-US/p/windows-terminal/9n0dx20hk701?activetab=pivot:overviewtab) ( [Windows PowerShell](https://docs.microsoft.com/en-us/powershell/) / [Linux Ubuntu](https://www.microsoft.com/en-us/p/ubuntu/9nblggh4msv6#activetab=pivot:overviewtab) )
-- [Git](https://git-scm.com/)
+- [Font](https://github.com/ryanoasis/nerd-fonts#patched-fonts) (recommendation: [Hack Nerd Font](https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/Hack.zip))
+- [Windows Terminal](https://www.microsoft.com/en-US/p/windows-terminal/9n0dx20hk701?activetab=pivot:overviewtab) ([Windows PowerShell](https://docs.microsoft.com/en-us/powershell/) / [Linux Ubuntu 20.4](https://www.microsoft.com/en-us/p/ubuntu/9nblggh4msv6#activetab=pivot:overviewtab))
+- [Iterm 2](https://iterm2.com/) (MacOS)
+- [Git](https://git-scm.com/) 
+- [LazyGit](https://github.com/jesseduffield/lazygit) - A simple terminal UI for git commands, written in Go with the gocui library
 - [Node.js](https://nodejs.org/en/) (latest)
 - [Npm](https://www.npmjs.com/) (latest)
 ## Vim (Neovim) setup
@@ -37,4 +39,3 @@ shell for **Linux**, **macOS**
 - [PSReadLine](https://docs.microsoft.com/en-us/powershell/module/psreadline/?view=powershell-7.2) - Cmdlets for customizing the editing environment, used for autocompletion
 - [Z](https://www.powershellgallery.com/packages/z/1.1.13) - Directory jumping
 - [PSFzf](https://github.com/kelleyma49/PSFzf) - Fuzzy finder
-## 
