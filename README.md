@@ -6,7 +6,6 @@
 
 - Vim (Neovim) config
 - Fish config
-- PowerShell config
 
 ## Preset
 - [Font](https://github.com/ryanoasis/nerd-fonts#patched-fonts) (recommendation: [Hack Nerd Font](https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/Hack.zip))
