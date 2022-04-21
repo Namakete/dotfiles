@@ -19,7 +19,7 @@ require('packer').startup(function()
         'nvim-telescope/telescope.nvim',
         requires = { {'nvim-lua/plenary.nvim'} }
     }
-    
+
     use 'https://github.com/norcalli/nvim-colorizer.lua'
 
     -- Autoformat
@@ -38,7 +38,7 @@ require('packer').startup(function()
     use 'williamboman/nvim-lsp-installer' -- Simple to use language server installer
     use 'tamago324/nlsp-settings.nvim'  -- Language server settings defined in json for
     use 'jose-elias-alvarez/null-ls.nvim' -- For formatters and linters
-
+    use {'tami5/lspsaga.nvim', config = "require('lspsaga-config')"}
     -- Snippets
     use 'L3MON4D3/LuaSnip'  -- Snippet engine
     use 'rafamadriz/friendly-snippets'  -- A bunch of snippets to use
