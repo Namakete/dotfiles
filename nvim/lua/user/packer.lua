@@ -2,6 +2,7 @@
 require('packer').startup(function()
     -- Packer basic plugins
     use 'wbthomason/packer.nvim'  -- Packer management plugin
+ use { "ellisonleao/gruvbox.nvim" }
     use 'projekt0n/github-nvim-theme' -- Nvim theme (GitHub)
     use 'kyazdani42/nvim-web-devicons'  --  Icons files
     use 'https://github.com/ryanoasis/vim-devicons'
@@ -18,12 +19,14 @@ require('packer').startup(function()
         'nvim-telescope/telescope.nvim',
         requires = { {'nvim-lua/plenary.nvim'} }
     }
+    
+    use 'https://github.com/norcalli/nvim-colorizer.lua'
 
     -- Autoformat
     use 'https://github.com/vim-autoformat/vim-autoformat' -- Autoformat code
 
     -- CMP plugin
-    use 'hrsh7th/nvim-cmp'  -- The completion plugin
+    use 'https://github.com/hrsh7th/nvim-cmp'
     use 'hrsh7th/cmp-buffer'  -- Buffer completions
     use 'hrsh7th/cmp-path'  -- Path completions
     use 'hrsh7th/cmp-cmdline' -- Cmdline completions
@@ -44,17 +47,9 @@ require('packer').startup(function()
     use 'folke/trouble.nvim' -- Debug panel
     require('luasnip.loaders.from_vscode').load()
 
-    -- Treesitter
-    use {
-        "nvim-treesitter/nvim-treesitter",
-        run = ":TSUpdate",
-    }
-
     use 'https://github.com/hankchiutw/flutter-reload.vim'
     use 'dart-lang/dart-vim-plugin'
     use 'thosakwe/vim-flutter'
-
-    use 'https://github.com/rcarriga/nvim-notify'
 
     use 'lukas-reineke/indent-blankline.nvim'
 
@@ -63,7 +58,8 @@ require('packer').startup(function()
         requires = {'nvim-lua/plenary.nvim'},
     }
 
-    -- Toggle Term for neovim
-	use 'akinsho/toggleterm.nvim'
+    use 'https://github.com/kdheepak/lazygit.nvim'
 
+    -- Toggle Term for neovim
+    use 'akinsho/toggleterm.nvim'
 end)

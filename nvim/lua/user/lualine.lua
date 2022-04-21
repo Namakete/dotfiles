@@ -29,7 +29,7 @@ require('lualine').setup {
 
 sections = {
     lualine_a = {
-    {
+        {
             'fileformat',
             symbols = {
                 unix = '', -- e712

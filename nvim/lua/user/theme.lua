@@ -1,41 +1,13 @@
+vim.cmd([[
+let g:gruvbox_termcolors=16
+let g:gruvbox_underline=1
+let g:grivbox_undercurl=1
+let g:gruvbox_transparent_bg=1
+set termguicolors
 
--- Theme style:
--- [DARK]
---    dark
---    dimmed
---    dark_default
---    dark_colorblind
--- [LIGHT]
---    light
---    light_default
---    light_colorblind
+colorscheme gruvbox
 
--- Example config in Lua
-require("github-theme").setup({
-    theme_style = "dark",
-    function_style = "italic",
-    sidebars = {"qf", "vista_kind", "terminal", "packer"},
-    transparent = true,
-    dark_sidebar = true,
+hi! Normal ctermbg=NONE guibg=NONE
+hi! Normal ctermbg=NONE guibg=NONE
+]])
 
-    -- Change the "hint" color to the "orange" color, and make the "error" color bright red
-    colors = {hint = "orange", error = "#ff0000"},
-
-    -- Overwrite the highlight groups
-    overrides = function(c)
-        return {
-            htmlTag = {fg = c.red, bg = "#282c34", sp = c.hint, style = "underline"},
-            DiagnosticHint = {link = "LspDiagnosticsDefaultHint"},
-            -- this will remove the highlight groups
-            TSField = {},
-        }
-    end
-})
-
--- Normal text style
-require("github-theme").setup({
-    comment_style = "NONE",
-    keyword_style = "NONE",
-    function_style = "NONE",
-    variable_style = "NONE",
-})
