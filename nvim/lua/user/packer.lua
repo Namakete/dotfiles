@@ -17,6 +17,9 @@ require('packer').startup(function()
 
     -- Devicons
     use 'https://github.com/ryanoasis/vim-devicons'
+    
+    -- Presence for [discord]
+    use 'https://github.com/andweeb/presence.nvim'
 
     -- Autopairs
     use 'windwp/nvim-autopairs' -- Autopairs, integrates with both cmp and treesitter

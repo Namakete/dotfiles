@@ -20,4 +20,5 @@ alias ll "exa --long --git --icons"
 alias lla "ll -a"
 alias g git
 alias lg lazygit
+alias gu gitui
 command -qv nvim && alias vim nvim
