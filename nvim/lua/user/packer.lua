@@ -1,15 +1,31 @@
+vim.cmd [[packadd packer.nvim]]
 -- Install your plugin here
 require('packer').startup(function()
     -- Packer basic plugins
     use 'wbthomason/packer.nvim'  -- Packer management plugin
- use { "ellisonleao/gruvbox.nvim" }
+
+    -- Novim [gruvbox] theme
+    use { "ellisonleao/gruvbox.nvim" }
+
+    -- Neovim [github] theme
     use 'projekt0n/github-nvim-theme' -- Nvim theme (GitHub)
+    
+    use {'nvim-treesitter/nvim-treesitter', run = ":TSUpdate"}
+
+    -- Web devicons
     use 'kyazdani42/nvim-web-devicons'  --  Icons files
+
+    -- Devicons
     use 'https://github.com/ryanoasis/vim-devicons'
+
+    -- Autopairs
     use 'windwp/nvim-autopairs' -- Autopairs, integrates with both cmp and treesitter
+
+    -- FixCursorHold
     use 'antoinemadec/FixCursorHold.nvim' -- This is needed to fix lsp doc highlight
+
+    -- Lualine
     use 'nvim-lualine/lualine.nvim'
-    use 'https://github.com/edkolev/tmuxline.vim'
 
     -- NERDTree
     use 'https://github.com/preservim/nerdtree' -- File system explorer
@@ -20,6 +36,7 @@ require('packer').startup(function()
         requires = { {'nvim-lua/plenary.nvim'} }
     }
 
+    -- Colorizer
     use 'https://github.com/norcalli/nvim-colorizer.lua'
 
     -- Autoformat
@@ -38,7 +55,8 @@ require('packer').startup(function()
     use 'williamboman/nvim-lsp-installer' -- Simple to use language server installer
     use 'tamago324/nlsp-settings.nvim'  -- Language server settings defined in json for
     use 'jose-elias-alvarez/null-ls.nvim' -- For formatters and linters
-    use {'tami5/lspsaga.nvim', config = "require('lspsaga-config')"}
+    use 'tami5/lspsaga.nvim'
+
     -- Snippets
     use 'L3MON4D3/LuaSnip'  -- Snippet engine
     use 'rafamadriz/friendly-snippets'  -- A bunch of snippets to use
@@ -47,19 +65,23 @@ require('packer').startup(function()
     use 'folke/trouble.nvim' -- Debug panel
     require('luasnip.loaders.from_vscode').load()
 
+    -- Packets for [dart - flutter]
     use 'https://github.com/hankchiutw/flutter-reload.vim'
     use 'dart-lang/dart-vim-plugin'
     use 'thosakwe/vim-flutter'
 
+    -- Blankline
     use 'lukas-reineke/indent-blankline.nvim'
 
+    -- Gitsigns for [git]
     use {
         'lewis6991/gitsigns.nvim',
         requires = {'nvim-lua/plenary.nvim'},
     }
 
+    -- Lazygit for [git]
     use 'https://github.com/kdheepak/lazygit.nvim'
 
-    -- Toggle Term for neovim
+    -- Toggle terminal for neovim
     use 'akinsho/toggleterm.nvim'
 end)

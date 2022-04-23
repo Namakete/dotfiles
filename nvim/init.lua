@@ -14,4 +14,4 @@ require('user.blanline')
 require('user.gitsigns')
 require('user.lualine')
 require('user.saga')
-
+require('user.treesitter')

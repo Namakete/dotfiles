@@ -1,4 +1,5 @@
 local keymap = vim.api.nvim_set_keymap
+
 keymap('n', '<c-s>', ':w!<CR>', {})     -- Save file
 keymap('n', '<c-q>', ':q!<CR>', {})     -- Go out of the file 
 keymap('n', '<c-e>', ':wq!<CR>', {})    -- Save and exit the file

@@ -144,6 +144,11 @@ _G.packer_plugins = {
     path = "/Users/namakete/.local/share/nvim/site/pack/packer/start/lazygit.nvim",
     url = "https://github.com/kdheepak/lazygit.nvim"
   },
+  ["lspsaga.nvim"] = {
+    loaded = true,
+    path = "/Users/namakete/.local/share/nvim/site/pack/packer/start/lspsaga.nvim",
+    url = "https://github.com/tami5/lspsaga.nvim"
+  },
   ["lualine.nvim"] = {
     loaded = true,
     path = "/Users/namakete/.local/share/nvim/site/pack/packer/start/lualine.nvim",
@@ -189,6 +194,11 @@ _G.packer_plugins = {
     path = "/Users/namakete/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
   },
+  ["nvim-treesitter"] = {
+    loaded = true,
+    path = "/Users/namakete/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
+    url = "https://github.com/nvim-treesitter/nvim-treesitter"
+  },
   ["nvim-web-devicons"] = {
     loaded = true,
     path = "/Users/namakete/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
@@ -208,11 +218,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/namakete/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
-  },
-  ["tmuxline.vim"] = {
-    loaded = true,
-    path = "/Users/namakete/.local/share/nvim/site/pack/packer/start/tmuxline.vim",
-    url = "https://github.com/edkolev/tmuxline.vim"
   },
   ["toggleterm.nvim"] = {
     loaded = true,

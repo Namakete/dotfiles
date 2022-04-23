@@ -65,19 +65,19 @@ cmp.setup {
             end
         end,
     },
-     formatting = {
-      fields = { "kind", "abbr", "menu" },
-      format = function(entry, vim_item)
-        vim_item.kind = string.format("%s", kind_icons[vim_item.kind])
-        vim_item.menu = ({
-          nvim_lsp = "[LSP]",
-          luasnip = "[Snippet]",
-          nvim_lua = "[NVIM_LUA]",
-          buffer = "[Buffer]",
-          path = "[Path]",
-        })[entry.source.name]
-        return vim_item
-      end,
+    formatting = {
+        fields = { "kind", "abbr", "menu" },
+        format = function(entry, vim_item)
+            vim_item.kind = string.format("%s", kind_icons[vim_item.kind])
+            vim_item.menu = ({
+                nvim_lsp = "[LSP]",
+                luasnip = "[Snippet]",
+                nvim_lua = "[NVIM_LUA]",
+                buffer = "[Buffer]",
+                path = "[Path]",
+            })[entry.source.name]
+            return vim_item
+        end,
     },
     sources = {
         { name = 'luasnip' },
@@ -92,6 +92,6 @@ cmp.setup {
         },
     },
     experimental = {
-      ghost_text = true,
+        ghost_text = true,
     },
 }
