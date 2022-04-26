@@ -11,6 +11,12 @@
                     "type": "session"
                 },
                 {
+                    "foreground": "#B16286",
+                    "style": "plain",
+                    "template": "{{ .HostName }}<#504945>:</>",
+                    "type": "session"
+                },
+                {
                     "foreground": "#00C6F7",
                     "properties": {
                         "style": "folder"
