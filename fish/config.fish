@@ -1,4 +1,4 @@
-oh-my-posh --init --shell fish --config ~/emodipt.json | source
+oh-my-posh --init --shell fish --config ~/.config/oh-my-posh/namakete.json| source
 
 set PATH ~/development/flutter/bin $PATH
 
