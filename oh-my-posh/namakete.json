@@ -7,7 +7,7 @@
                 {
                     "foreground": "#FFBD00",
                     "style": "plain",
-                    "template": "<#504945>\u250f</> {{ .UserName }}<#504945>@</>",
+                    "template": "<#504945>╔</> {{ .UserName }}<#504945>@</>",
                     "type": "session"
                 },
                 {
@@ -73,7 +73,7 @@
                 {
                     "foreground": "#00C6F7",
                     "style": "plain",
-                    "template": "<#504945>\u2516</> $",
+                    "template": "<#504945>╚</> $",
                     "type": "text"
                 }
             ],
