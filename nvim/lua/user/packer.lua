@@ -9,15 +9,25 @@ require('packer').startup(function()
 
     -- Neovim [github] theme
     use 'projekt0n/github-nvim-theme' -- Nvim theme (GitHub)
-    
+
+    -- Treesitter
     use {'nvim-treesitter/nvim-treesitter', run = ":TSUpdate"}
+    
+    -- Plenary
+    use 'nvim-lua/plenary.nvim'
+
+    -- Todo-comments
+    use {
+        "folke/todo-comments.nvim",
+        requires = "nvim-lua/plenary.nvim",
+    }
 
     -- Web devicons
     use 'kyazdani42/nvim-web-devicons'  --  Icons files
 
     -- Devicons
     use 'https://github.com/ryanoasis/vim-devicons'
-    
+
     -- Presence for [discord]
     use 'https://github.com/andweeb/presence.nvim'
 
