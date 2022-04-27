@@ -12,7 +12,7 @@ require('packer').startup(function()
 
     -- Treesitter
     use {'nvim-treesitter/nvim-treesitter', run = ":TSUpdate"}
-    
+
     -- Plenary
     use 'nvim-lua/plenary.nvim'
 
@@ -75,8 +75,8 @@ require('packer').startup(function()
     use 'rafamadriz/friendly-snippets'  -- A bunch of snippets to use
 
     -- Trouble
-    use 'folke/trouble.nvim' -- Debug panel
-    require('luasnip.loaders.from_vscode').load()
+    use {'folke/trouble.nvim',
+        require('luasnip.loaders.from_vscode').load()}
 
     -- Packets for [dart - flutter]
     use 'https://github.com/hankchiutw/flutter-reload.vim'
