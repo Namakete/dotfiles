@@ -3,7 +3,8 @@
     "Lua.diagnostics.disable": [
         "undefined-global",
         "unused-local",
-        "different-requires"
+        "different-requires",
+        "trailing-space"
     ],
     "Lua.diagnostics.globals": [
         "sections"
