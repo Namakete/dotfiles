@@ -22,6 +22,17 @@ require('packer').startup(function()
         requires = "nvim-lua/plenary.nvim",
     }
 
+    -- Bufferline
+    use {
+        'akinsho/nvim-bufferline.lua',
+        requires = 'kyazdani42/nvim-web-devicons',
+        event = "BufWinEnter",
+        config = "require('bufferline-config')"
+    }
+    
+    -- Bbye
+    use 'https://github.com/moll/vim-bbye'
+
     -- Web devicons
     use 'kyazdani42/nvim-web-devicons'  --  Icons files
 
