@@ -26,7 +26,6 @@ require'nvim-treesitter.configs'.setup {
         "bash",
         "c_sharp",
         "cpp",
-        "fortran",
         "javascript",
     },
     autotag = {

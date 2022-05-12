@@ -45,8 +45,8 @@ bufferline.setup {
             guibg = { attribute = "bg", highlight = "TabLine" },
         },
         buffer_selected = {
-            guifg = {attribute='fg',highlight='#ff0000'},
-            guibg = {attribute='bg',highlight='#0000ff'},
+            guifg = {attribute='fg', highlight = '#ff0000'},
+            guibg = {attribute='bg', highlight = '#0000ff'},
             gui = 'none'
         },
         buffer_visible = {
@@ -73,7 +73,6 @@ bufferline.setup {
             guifg = { attribute = "fg", highlight = "TabLineSel" },
             guibg = { attribute = "bg", highlight = "Normal" },
         },
-
         duplicate_selected = {
             guifg = { attribute = "fg", highlight = "TabLineSel" },
             guibg = { attribute = "bg", highlight = "TabLineSel" },

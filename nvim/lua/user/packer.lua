@@ -9,6 +9,9 @@ require('packer').startup(function()
 
     -- Neovim [github] theme
     use 'projekt0n/github-nvim-theme' -- Nvim theme (GitHub)
+   
+    -- Neovim [xcode] theme
+    use 'https://github.com/arzg/vim-colors-xcode'
 
     -- Treesitter
     use {'nvim-treesitter/nvim-treesitter', run = ":TSUpdate"}
@@ -23,13 +26,8 @@ require('packer').startup(function()
     }
 
     -- Bufferline
-    use {
-        'akinsho/nvim-bufferline.lua',
-        requires = 'kyazdani42/nvim-web-devicons',
-        event = "BufWinEnter",
-        config = "require('bufferline-config')"
-    }
-    
+    use "akinsho/bufferline.nvim"
+
     -- Bbye
     use 'https://github.com/moll/vim-bbye'
 
@@ -59,6 +57,11 @@ require('packer').startup(function()
         'nvim-telescope/telescope.nvim',
         requires = { {'nvim-lua/plenary.nvim'} }
     }
+
+    -- Telescope media-files
+    use 'nvim-telescope/telescope-media-files.nvim'
+    
+    use "nvim-telescope/telescope-ui-select.nvim"
 
     -- Colorizer
     use 'https://github.com/norcalli/nvim-colorizer.lua'
@@ -108,4 +111,6 @@ require('packer').startup(function()
 
     -- Toggle terminal for neovim
     use 'akinsho/toggleterm.nvim'
+
+    
 end)
