@@ -21,3 +21,5 @@ alias lg lazygit
 alias gu gitui
 alias cls clear
 command -qv nvim && alias vim nvim
+
+alias covid "~/.config/scripts/covid"
