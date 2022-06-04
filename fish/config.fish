@@ -1,4 +1,4 @@
-oh-my-posh --init --shell fish --config ~/.config/themes/gruvbox/oh-my-posh/gruvbox.json| source
+oh-my-posh --init --shell fish --config ~/.config/oh-my-posh/themes/gruvbox.json| source
 
 set PATH ~/development/flutter/bin $PATH
 
@@ -25,7 +25,3 @@ alias lg lazygit
 
 # Bind vim & neovim
 command -qv nvim && alias vim nvim
-
-# Bind scripts path
-alias covid "~/.config/scripts/covid"
-alias termcolors "~/.config/scripts/termcolors"
