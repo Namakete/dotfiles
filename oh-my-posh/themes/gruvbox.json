@@ -1,5 +1,4 @@
 {
-    "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
     "blocks": [
         {
             "alignment": "left",
@@ -22,7 +21,7 @@
                         "style": "folder"
                     },
                     "style": "plain",
-                    "template": "{{ .Path }}<#504945>:</>",
+                    "template": "{{ .Path }}",
                     "type": "path"
                 },
                 {
@@ -31,7 +30,7 @@
                         "fetch_status": true
                     },
                     "style": "plain",
-                    "template": "<#98971a>git</><#504945>(</>{{ .HEAD }}{{ .BranchStatus }}{{ if .Working.Changed }} \uf044 {{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }} \uf046 {{ .Staging.String }}{{ end }}<#504945>)</>",
+                    "template": "<#504945>:</><#98971a>git</><#504945>(</>{{ .HEAD }}{{ .BranchStatus }}{{ if .Working.Changed }} \uf044 {{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }} \uf046 {{ .Staging.String }}{{ end }}<#504945>)</>",
                     "type": "git"
                 },
                 {
