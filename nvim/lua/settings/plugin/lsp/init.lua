@@ -4,4 +4,4 @@ if not status_ok then
 end
 
 require('settings.plugin.lsp.installer')
---require('settings.plugin.lsp.config')
+require('settings.plugin.lsp.config')
