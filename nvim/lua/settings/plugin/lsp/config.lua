@@ -8,15 +8,11 @@ M.setup = function()
         { name = "DiagnosticSignInfo", text = ""},
         { name = "DiagnosticSign", text = "﫠"},
     }
-
     for type, sign in pairs(signs) do
         vim.fn.sign_define(sign.name, { texthl = sign.name, text = sign.text, numhl = "" })
     end
-
     local config = {
-        -- disable virtual text
         virtual_text = false,
-        -- show signs
         signs = {
             active = signs,
         },
@@ -32,26 +28,20 @@ M.setup = function()
             prefix = "",
         },
     }
-
-
     vim.diagnostic.config(config)
-
     vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
         border = "rounded",
     })
-
     vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {
         border = "rounded",
     })
 end
-
 vim.lsp.handlers['textDocument/publishDiagnostics'] =
 vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
     underline = true,
     virtual_text = {spacing = 5, severity_limit = 'Warning', prefix = '❒'},
     update_in_insert = true
 })
-
 local function lsp_highlight_document(client)
     if client.resolved_capabilities.document_highlight then
         vim.api.nvim_exec(
@@ -76,7 +66,6 @@ local function lsp_keymaps(bufnr)
     vim.api.nvim_buf_set_keymap(bufnr, "n", "]d", '<cmd>lua vim.diagnostic.goto_next({ border = "rounded" })<CR>', opts)
     vim.cmd [[ command! Format execute 'lua vim.lsp.buf.formatting()' ]]
 end
-
 M.on_attach = function(client, bufnr)
     if client.name == "tsserver" then
         client.resolved_capabilities.document_formatting = false
@@ -84,14 +73,10 @@ M.on_attach = function(client, bufnr)
     lsp_keymaps(bufnr)
     lsp_highlight_document(client)
 end
-
 local capabilities = vim.lsp.protocol.make_client_capabilities()
-
 local status_ok, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
 if not status_ok then
     return
 end
-
 M.capabilities = cmp_nvim_lsp.update_capabilities(capabilities)
-
 return M
