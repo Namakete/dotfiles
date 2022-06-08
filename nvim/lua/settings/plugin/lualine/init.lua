@@ -31,21 +31,21 @@ sections = {
         {
             'fileformat',
             symbols = {
-                unix = '', -- e712
-                dos = '',  -- e70f
-                mac = '',  -- e711
+                unix = '',
+                dos = '',
+                mac = '',
             }
         },
         'diagnostics',
-        sources = { 
-            'nvim_diagnostic', 
-            'coc' 
+        sources = {
+            'nvim_diagnostic',
+            'coc'
         },
-        sections = { 
-            'error', 
-            'warn', 
-            'info', 
-            'hint' 
+        sections = {
+            'error',
+            'warn',
+            'info',
+            'hint'
         },
         diagnostics_color = {
             error = 'DiagnosticError',
@@ -54,12 +54,12 @@ sections = {
             hint  = 'DiagnosticHint',
         },
         symbols = {
-            error = 'E', 
-            warn = 'W', 
-            info = 'I', 
+            error = 'E',
+            warn = 'W',
+            info = 'I',
             hint = 'H'
         },
-        colored = true,         
+        colored = true,
         update_in_insert = false,
         always_visible = false,
     }

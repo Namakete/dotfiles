@@ -1,10 +1,22 @@
-vim.cmd([[
-let g:gruvbox_italicize_comments=0
-let g:gruvbox_termcolors=16 
-let g:gruvbox_underline=0
-let g:grivbox_undercurl=1
-let g:gruvbox_transparent_bg=1
-let g:gruvbox_invert_indent_guides=1
-colorscheme gruvbox
-hi! Normal ctermbg=NONE guibg=NONE
-]])
+require("github-theme").setup({
+    theme_style = "dimmed",
+    function_style = "italic",
+    transparent = true,
+    dev = true,
+    comment_style = "NONE",
+    keyword_style = "NONE",
+    variable_style = "NONE",
+    sidebars = {
+        "qf",
+        "vista_kind",
+        "terminal",
+        "packer"
+    },
+    dark_sidebar = true,
+    colors = {
+        hint = "orange",
+        error = "#ff0000"
+    },
+})
+
+

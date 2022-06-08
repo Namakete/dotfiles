@@ -1,3 +1,4 @@
+require('settings.plugin.blankkine')
 require('settings.plugin.cmp')
 require('settings.plugin.colorscheme')
 require('settings.plugin.gitsign')

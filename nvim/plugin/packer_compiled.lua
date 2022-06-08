@@ -114,6 +114,11 @@ _G.packer_plugins = {
     path = "/Users/namakete/.local/share/nvim/site/pack/packer/start/friendly-snippets",
     url = "https://github.com/rafamadriz/friendly-snippets"
   },
+  ["github-nvim-theme"] = {
+    loaded = true,
+    path = "/Users/namakete/.local/share/nvim/site/pack/packer/start/github-nvim-theme",
+    url = "https://github.com/projekt0n/github-nvim-theme"
+  },
   ["gitsigns.nvim"] = {
     loaded = true,
     path = "/Users/namakete/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
@@ -208,11 +213,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/namakete/.local/share/nvim/site/pack/packer/start/vim-autoformat",
     url = "https://github.com/vim-autoformat/vim-autoformat"
-  },
-  ["vim-devicons"] = {
-    loaded = true,
-    path = "/Users/namakete/.local/share/nvim/site/pack/packer/start/vim-devicons",
-    url = "https://github.com/ryanoasis/vim-devicons"
   },
   ["vim-flutter"] = {
     loaded = true,

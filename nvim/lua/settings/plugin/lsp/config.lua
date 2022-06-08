@@ -4,9 +4,7 @@ M.setup = function()
     local signs = {
         { name = "DiagnosticSignError", text = "" },
         { name = "DiagnosticSignWarn", text = "" },
-        { name = "DiagnosticSignHint", text = "" },
         { name = "DiagnosticSignInfo", text = ""},
-        { name = "DiagnosticSign", text = "﫠"},
     }
     for type, sign in pairs(signs) do
         vim.fn.sign_define(sign.name, { texthl = sign.name, text = sign.text, numhl = "" })
@@ -39,7 +37,7 @@ end
 vim.lsp.handlers['textDocument/publishDiagnostics'] =
 vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
     underline = true,
-    virtual_text = {spacing = 5, severity_limit = 'Warning', prefix = '❒'},
+    virtual_text = {spacing = 5, severity_limit = 'Warning', prefix = '■'},
     update_in_insert = true
 })
 local function lsp_highlight_document(client)

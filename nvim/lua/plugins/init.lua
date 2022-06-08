@@ -11,15 +11,19 @@ if fn.empty(fn.glob(install_path)) > 0 then
     execute 'packadd packer.nvim'
 end
 
-return require('packer').startup(function()
+return require('packer').startup(function(use)
     use {'wbthomason/packer.nvim'}
 
     use {'https://github.com/preservim/nerdtree'}
 
     use {'ellisonleao/gruvbox.nvim'}
 
+    use {'projekt0n/github-nvim-theme'}
+
+    use {'lukas-reineke/indent-blankline.nvim'}
+
     use {'https://github.com/norcalli/nvim-colorizer.lua'}
-    
+
     use {'kyazdani42/nvim-web-devicons'}
 
     use {'https://github.com/ryanoasis/vim-devicons'}
@@ -38,29 +42,29 @@ return require('packer').startup(function()
     use {'https://github.com/vim-autoformat/vim-autoformat'}
 
     use {'https://github.com/hrsh7th/nvim-cmp'}
-    
-    use {'hrsh7th/cmp-buffer'}  
-    
-    use {'hrsh7th/cmp-path'}  
-    
+
+    use {'hrsh7th/cmp-buffer'}
+
+    use {'hrsh7th/cmp-path'}
+
     use {'hrsh7th/cmp-cmdline'}
-    
+
     use {'saadparwaiz1/cmp_luasnip'}
-    
+
     use {'hrsh7th/cmp-nvim-lsp'}
 
     use {'neovim/nvim-lspconfig'}
 
     use {'williamboman/nvim-lsp-installer'}
-    
+
     use {'tamago324/nlsp-settings.nvim'}
-    
+
     use {'jose-elias-alvarez/null-ls.nvim'}
-    
+
     use {'tami5/lspsaga.nvim'}
 
     use {'L3MON4D3/LuaSnip'}
-    
+
     use {'rafamadriz/friendly-snippets'}
 
     use {

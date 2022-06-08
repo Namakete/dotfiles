@@ -1,3 +1,13 @@
+--FIXME:
+--BUG:
+--FIXIT:
+--ISSUE:
+--TODO:
+--HACK:
+--WARN:
+--PERF:
+--NOTE:
+
 require("todo-comments").setup {
     {
         signs = true, 
