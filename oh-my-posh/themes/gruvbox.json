@@ -34,33 +34,25 @@
                     "type": "git"
                 },
                 {
+                    "foreground": "#458588",
+                    "style": "plain",
+                    "template": "{{if .Version}} <#504945>is</> \uf487 {{.Version}} {{end}}",
+                    "type": "project"
+                },
+                {
                     "foreground": "#689d6a",
                     "properties": {
                         "fetch_version": true
                     },
                     "style": "plain",
-                    "template": "<#ffffff>via</> \ue781 {{ if .PackageManagerIcon }}{{ .PackageManagerIcon }} {{ end }}{{ .Full }} ",
+                    "template": "<#504945>via</> \ue781 {{ if .PackageManagerIcon }}{{ .PackageManagerIcon }} {{ end }}{{ .Full }}",
                     "type": "node"
-                }
-            ],
-            "type": "prompt"
-        },
-        {
-            "alignment": "right",
-            "segments": [
-                {
-                    "foreground": "#F62F2E",
-                    "style": "diamond",
-                    "template": "<#689d6a>RAM</><#504945>(</>{{(div ((sub .PhysicalTotalMemory .PhysicalFreeMemory)|float64) 1000000000.0) }}/{{(div .PhysicalTotalMemory 1000000000.0) }}GB<#504945>)</>",
-                    "type": "sysinfo"
                 },
                 {
-                    "properties": {
-                        "time_format": "15:04:05"
-                    },
+                    "foreground": "#FE4934",
                     "style": "plain",
-                    "template": "<#504945>|</>{{ .CurrentDate | date .Format }}",
-                    "type": "time"
+                    "template": "<#504945> and</> \ue71e {{.Full}} ",
+                    "type": "npm"
                 }
             ],
             "type": "prompt"
