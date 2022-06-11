@@ -1,4 +1,5 @@
 oh-my-posh --init --shell fish --config ~/.config/oh-my-posh/themes/gruvbox.json| source
+#oh-my-posh --init --shell fish --config ~/.config/oh-my-posh/themes/shell.json| source
 
 set PATH ~/development/flutter/bin $PATH
 

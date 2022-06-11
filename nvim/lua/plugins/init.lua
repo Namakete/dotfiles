@@ -37,6 +37,8 @@ return require('packer').startup(function(use)
 
     use {'akinsho/toggleterm.nvim'}
 
+    use {'folke/zen-mode.nvim'}
+
     use {'nvim-lualine/lualine.nvim'}
 
     use {'https://github.com/vim-autoformat/vim-autoformat'}
