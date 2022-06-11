@@ -13,6 +13,8 @@ end
 
 return require('packer').startup(function(use)
     use {'wbthomason/packer.nvim'}
+    
+    use 'nvim-treesitter/nvim-treesitter'
 
     use {'https://github.com/preservim/nerdtree'}
 
