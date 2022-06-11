@@ -16,3 +16,5 @@ map('n', 'gr', ':Lspsaga rename<CR>', {silent = true, noremap = true})
 map('n', '<space>ca', ':Lspsaga code_action<CR>', {silent = true, noremap = true})
 
 map('n', '<space>gh', ':Gitsigns preview_hunk<CR>', {silent = true, noremap = true})
+
+map('n', '<space>f', ':Telescope find_files<CR>', {silent = true, noremap = true})

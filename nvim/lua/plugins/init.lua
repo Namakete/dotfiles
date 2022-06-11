@@ -37,6 +37,11 @@ return require('packer').startup(function(use)
 
     use {'akinsho/toggleterm.nvim'}
 
+    use {
+        'nvim-telescope/telescope.nvim',
+        requires = { {'nvim-lua/plenary.nvim'} }
+    }
+
     use {'folke/zen-mode.nvim'}
 
     use {'nvim-lualine/lualine.nvim'}
