@@ -5,14 +5,14 @@ require('telescope').setup {
             width = 0.50,
             prompt_position = "top",
             preview_cutoff = 120,
-            horizontal = {mirror = true},
-            vertical = {mirror = true}
+            horizontal = {mirror = false},
+            vertical = {mirror = false}
         },
         find_command = {
             'rg', '--no-heading', '--with-filename', '--line-number', '--column', '--smart-case'
         },
         prompt_prefix = " ",
-        selection_caret = " ",
+        selection_caret = "> ",
         entry_prefix = "  ",
         initial_mode = "insert",
         selection_strategy = "reset",
@@ -32,6 +32,11 @@ require('telescope').setup {
         grep_previewer = require'telescope.previewers'.vim_buffer_vimgrep.new,
         qflist_previewer = require'telescope.previewers'.vim_buffer_qflist.new,
         buffer_previewer_maker = require'telescope.previewers'.buffer_previewer_maker,
+    },
+    pickers = {
+        find_files = {
+            theme = "dropdown",
+        }
     },
     mappings = {
         i = {
