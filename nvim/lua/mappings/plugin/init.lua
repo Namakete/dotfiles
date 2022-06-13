@@ -18,3 +18,5 @@ map('n', '<space>ca', ':Lspsaga code_action<CR>', {silent = true, noremap = true
 map('n', '<space>gh', ':Gitsigns preview_hunk<CR>', {silent = true, noremap = true})
 
 map('n', 'ff', ':Telescope find_files<CR>', {silent = true, noremap = true})
+
+map('n', 'mz', ':ZenMode<CR>', {silent = true, noremap = true})
