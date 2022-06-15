@@ -104,6 +104,11 @@ _G.packer_plugins = {
     path = "/Users/namakete/.local/share/nvim/site/pack/packer/start/dart-vim-plugin",
     url = "https://github.com/dart-lang/dart-vim-plugin"
   },
+  ["diffview.nvim"] = {
+    loaded = true,
+    path = "/Users/namakete/.local/share/nvim/site/pack/packer/start/diffview.nvim",
+    url = "https://github.com/sindrets/diffview.nvim"
+  },
   ["flutter-reload.vim"] = {
     loaded = true,
     path = "/Users/namakete/.local/share/nvim/site/pack/packer/start/flutter-reload.vim",
@@ -114,20 +119,15 @@ _G.packer_plugins = {
     path = "/Users/namakete/.local/share/nvim/site/pack/packer/start/friendly-snippets",
     url = "https://github.com/rafamadriz/friendly-snippets"
   },
-  ["github-nvim-theme"] = {
-    loaded = true,
-    path = "/Users/namakete/.local/share/nvim/site/pack/packer/start/github-nvim-theme",
-    url = "https://github.com/projekt0n/github-nvim-theme"
-  },
   ["gitsigns.nvim"] = {
     loaded = true,
     path = "/Users/namakete/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
     url = "https://github.com/lewis6991/gitsigns.nvim"
   },
-  ["gruvbox.nvim"] = {
+  ["gruvbox-material"] = {
     loaded = true,
-    path = "/Users/namakete/.local/share/nvim/site/pack/packer/start/gruvbox.nvim",
-    url = "https://github.com/ellisonleao/gruvbox.nvim"
+    path = "/Users/namakete/.local/share/nvim/site/pack/packer/start/gruvbox-material",
+    url = "https://github.com/sainnhe/gruvbox-material"
   },
   ["indent-blankline.nvim"] = {
     loaded = true,
@@ -174,6 +174,16 @@ _G.packer_plugins = {
     path = "/Users/namakete/.local/share/nvim/site/pack/packer/start/nvim-colorizer.lua",
     url = "https://github.com/norcalli/nvim-colorizer.lua"
   },
+  ["nvim-dap"] = {
+    loaded = true,
+    path = "/Users/namakete/.local/share/nvim/site/pack/packer/start/nvim-dap",
+    url = "https://github.com/mfussenegger/nvim-dap"
+  },
+  ["nvim-dap-ui"] = {
+    loaded = true,
+    path = "/Users/namakete/.local/share/nvim/site/pack/packer/start/nvim-dap-ui",
+    url = "https://github.com/rcarriga/nvim-dap-ui"
+  },
   ["nvim-lsp-installer"] = {
     loaded = true,
     path = "/Users/namakete/.local/share/nvim/site/pack/packer/start/nvim-lsp-installer",
@@ -183,6 +193,16 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/namakete/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
+  },
+  ["nvim-markdown-preview"] = {
+    loaded = true,
+    path = "/Users/namakete/.local/share/nvim/site/pack/packer/start/nvim-markdown-preview",
+    url = "https://github.com/davidgranstrom/nvim-markdown-preview"
+  },
+  ["nvim-treesitter"] = {
+    loaded = true,
+    path = "/Users/namakete/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
+    url = "https://github.com/nvim-treesitter/nvim-treesitter"
   },
   ["nvim-web-devicons"] = {
     loaded = true,
@@ -233,6 +253,16 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/namakete/.local/share/nvim/site/pack/packer/start/vim-flutter",
     url = "https://github.com/thosakwe/vim-flutter"
+  },
+  ["vim-nerdtree-syntax-highlight"] = {
+    loaded = true,
+    path = "/Users/namakete/.local/share/nvim/site/pack/packer/start/vim-nerdtree-syntax-highlight",
+    url = "https://github.com/tiagofumo/vim-nerdtree-syntax-highlight"
+  },
+  ["vim-startify"] = {
+    loaded = true,
+    path = "/Users/namakete/.local/share/nvim/site/pack/packer/start/vim-startify",
+    url = "https://github.com/mhinz/vim-startify"
   },
   ["zen-mode.nvim"] = {
     loaded = true,

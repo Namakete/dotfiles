@@ -1,24 +1,11 @@
---require("github-theme").setup({
---    theme_style = "dimmed",
---    function_style = "italic",
---    transparent = true,
---    dev = true,
---    comment_style = "NONE",
---    keyword_style = "NONE",
---    variable_style = "NONE",
---    sidebars = {
---        "qf",
---        "vista_kind",
---        "terminal",
---        "packer"
---    },
---    dark_sidebar = true,
---    colors = {
---        hint = "orange",
---        error = "#ff0000"
---    },
---})
---
-vim.cmd([[colorscheme gruvbox]])
+-- sdfdf
+
+vim.cmd([[
+    let gruvbox_material_disable_italic_comment=1
+    let gruvbox_material_transparent_background=1
+    let gruvbox_material_cursor='yellow'
+    
+    colorscheme gruvbox-material
+]])
 
 

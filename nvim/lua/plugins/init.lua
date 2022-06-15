@@ -13,14 +13,20 @@ end
 
 return require('packer').startup(function(use)
     use {'wbthomason/packer.nvim'}
-    
+
     use 'nvim-treesitter/nvim-treesitter'
 
-    use {'https://github.com/preservim/nerdtree'}
+    use {'https://github.com/preservim/nerdtree',
+        requires = {
+            'kyazdani42/nvim-web-devicons',
+        },
+    }
 
-    use {'ellisonleao/gruvbox.nvim'}
+    use {'tiagofumo/vim-nerdtree-syntax-highlight'}
 
-    use {'projekt0n/github-nvim-theme'}
+    use {'https://github.com/sainnhe/gruvbox-material'}
+
+    use {'mhinz/vim-startify'}
 
     use {'lukas-reineke/indent-blankline.nvim'}
 
@@ -72,6 +78,11 @@ return require('packer').startup(function(use)
 
     use {'tami5/lspsaga.nvim'}
 
+    use {
+        'rcarriga/nvim-dap-ui',
+        requires = {'mfussenegger/nvim-dap'}
+    }
+
     use {'L3MON4D3/LuaSnip'}
 
     use {'rafamadriz/friendly-snippets'}
@@ -85,12 +96,16 @@ return require('packer').startup(function(use)
 
     use {'dart-lang/dart-vim-plugin'}
 
+    use {'davidgranstrom/nvim-markdown-preview'}
+
     use {'thosakwe/vim-flutter'}
 
     use {
         'lewis6991/gitsigns.nvim',
         requires = {'nvim-lua/plenary.nvim'},
     }
+
+    use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
 
     use {'https://github.com/kdheepak/lazygit.nvim'}
 end)
