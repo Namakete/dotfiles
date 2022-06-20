@@ -4,10 +4,13 @@ declare ARGS_INSTALL_DEPENDENCIES=1
 
 function main(){
     print_logo
-    msg "🔍 Detecting platform for managing any additional neovim dependencies..."
+    msg "[🔍]: Detecting platform for managing any additional neovim dependencies..."
     detect_platform
-    msg "🔍 Check system dependencies..."
-    check_system_deps
+    msg "[🔍]: Checking package managers..."
+    install_pkg_managers
+    msg "[🔍]: Installing nodejs dependenciesd..."
+    install_nodejs_deps
+    msg "[🔍]: Installing python dependenciesd..."
 }
 
 function print_logo() {
@@ -29,8 +32,8 @@ function msg() {
 
 function print_missing_dep_msg() {
   if [ "$#" -eq 1 ]; then
-    echo "[😫]: Unable to find dependency [$1]"
-    echo "Please install it first and re-run the installer. Try: $RECOMMEND_INSTALL $1"
+    echo "[😫]: Unable to find package [$1]"
+    echo "The package $1 will bew installed"
   else
     local cmds
     cmds=$(for i in "$@"; do echo "$RECOMMEND_INSTALL $i"; done)
@@ -38,10 +41,6 @@ function print_missing_dep_msg() {
     printf "Please install any one of the dependencies and re-run the installer. Try: \n%s\n" "$cmds"
   fi
 }
-
-declare -a vim_deps=(
-    "nvim"
-)
 
 function confirm() {
     local question="$1"
@@ -63,30 +62,30 @@ function confirm() {
 }
 
 function detect_platform() {
-    OS="$(uname -s)"
+    local OS="$(uname -s)"
     case "$OS" in
         Linux)
             if [ -f "/etc/arch-release" ] || [ -f "/etc/artix-release" ]; then
-                RECOMMEND_INSTALL="sudo pacman -S "
+                RECOMMEND_INSTALL="sudo pacman -S"
             elif [ -f "/etc/fedora-release" ] || [ -f "/etc/redhat-release" ]; then
                 RECOMMEND_INSTALL="sudo dnf install -y "
             elif [ -f "/etc/gentoo-release" ]; then
-                RECOMMEND_INSTALL="emerge install -y "
+                RECOMMEND_INSTALL="emerge install -y"
             else
-                RECOMMEND_INSTALL="sudo apt install -y "
+                RECOMMEND_INSTALL="sudo apt install -y"
             fi
             ;;
         FreeBSD)
-            RECOMMEND_INSTALL="sudo pkg install -y "
+            RECOMMEND_INSTALL="sudo pkg install -y"
             ;;
         NetBSD)
-            RECOMMEND_INSTALL="sudo pkgin install "
+            RECOMMEND_INSTALL="sudo pkgin install"
             ;;
         OpenBSD)
-            RECOMMEND_INSTALL="doas pkg_add "
+            RECOMMEND_INSTALL="doas pkg_add"
             ;;
         Darwin)
-            RECOMMEND_INSTALL="brew install "
+            RECOMMEND_INSTALL="brew install"
             ;;
         *)
             echo "OS $OS is not currently supported 😔"
@@ -95,23 +94,72 @@ function detect_platform() {
     esac
 }
 
-function check_system_deps() {
-    if ! command -v git &>/dev/null; then
-        print_missing_dep_msg "git"
-        exit 1
-    fi
-    if ! command -v npm &>/dev/null; then
-        print_missing_dep_msg "npm"
-        exit 1
-    fi
-    if ! command -v node &>/dev/null; then
-        print_missing_dep_msg "node"
-        exit 1
-    fi
-    if ! command -v vim &>/dev/null; then
-        print_missing_dep_msg "vim"
-        exit 1
-    fi
+declare -a __pkg_managers=(
+    "npm"
+    "yarn"
+    "pip"
+)
+
+function install_pkg_managers() {
+    for pkg in "${__pkg_managers[@]}"; do
+        if ! command -v ${pkg} &>/dev/null; then
+            print_missing_dep_msg "$pkg"
+            $RECOMMEND_INSTALL "$pkg"
+        fi
+    done
 }
+
+function __install_nodejs_deps_npm() {
+    echo "Installing node modules with npm.."
+    for dep in "${__npm_deps[@]}"; do
+        if ! npm ls -g "$dep" &>/dev/null; then
+            printf "installing %s .." "$dep"
+            npm install -g "$dep"
+        fi
+    done
+
+    echo "All NodeJS dependencies are successfully installed"
+}
+
+function __install_nodejs_deps_yarn() {
+    echo "Installing node modules with yarn.."
+    yarn global add "${__npm_deps[@]}"
+    echo "All NodeJS dependencies are successfully installed"
+}
+
+function __validate_node_installation() {
+    local pkg_manager="$1"
+    local manager_home
+
+    if ! command -v "$pkg_manager" &>/dev/null; then
+        return 1
+    fi
+
+    if [ "$pkg_manager" == "npm" ]; then
+        manager_home="$(npm config get prefix 2>/dev/null)"
+    else
+        manager_home="$(yarn global bin 2>/dev/null)"
+    fi
+
+    if [ ! -d "$manager_home" ] || [ ! -w "$manager_home" ]; then
+        echo "[😔] Unable to install using [$pkg_manager] without administrative privileges."
+        return 1
+    fi
+
+    return 0
+}
+
+function install_nodejs_deps() {
+    local -a pkg_managers=("yarn" "npm")
+    for pkg_manager in "${pkg_managers[@]}"; do
+        if __validate_node_installation "$pkg_manager"; then
+            eval "__install_nodejs_deps_$pkg_manager"
+            return
+        fi
+    done
+    print_missing_dep_msg "${pkg_managers[@]}"
+    exit 1
+}
+
 
 main
