@@ -2,6 +2,7 @@
 
 function main(){
     print_logo
+    msg "🔍 Detecting platform for managing any additional neovim dependencies"
 }
 
 function print_logo() {
@@ -13,6 +14,13 @@ function print_logo() {
        |_| \_|\__,_|_| |_| |_|\__,_|____/ \___/ \__|_|   |_|_|\___||___/
                                                                         
 EOF
+}
+
+function msg() {
+    local text="$1"
+    local div_width="80"
+    printf "%${div_width}s\n" ' ' | tr ' ' -
+    printf "%s\n" "$text"
 }
 
 main
