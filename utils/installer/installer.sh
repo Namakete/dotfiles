@@ -4,13 +4,20 @@ declare ARGS_INSTALL_DEPENDENCIES=1
 
 function main(){
     print_logo
+    
     msg "[🔍]: Detecting platform for managing any additional neovim dependencies..."
     detect_platform
+    
     msg "[🔍]: Checking package managers..."
     install_pkg_managers
+    
     msg "[🔍]: Installing nodejs dependenciesd..."
     install_nodejs_deps
+    
     msg "[🔍]: Installing python dependenciesd..."
+    install_python_deps
+
+    echo -e '\033[0;32m Download finished!'
 }
 
 function print_logo() {
@@ -27,6 +34,7 @@ EOF
 function msg() {
     local text="$1"
     local div_width="80"
+    
     printf "%s\n" "$text"
 }
 
@@ -36,33 +44,17 @@ function print_missing_dep_msg() {
     echo "The package $1 will bew installed"
   else
     local cmds
+    
     cmds=$(for i in "$@"; do echo "$RECOMMEND_INSTALL $i"; done)
+    
     printf "[😣]: Unable to find dependencies [%s]" "$@"
     printf "Please install any one of the dependencies and re-run the installer. Try: \n%s\n" "$cmds"
   fi
 }
 
-function confirm() {
-    local question="$1"
-    while true; do
-        msg "$question"
-        read -p "[Y]es or [N]o : " -r answer
-        case "$answer" in
-        y | Y | yes | YES | Yes)
-            return 0
-            ;;
-        n | N | no | NO | No | *[[:blank:]]* | "")
-            return 1
-            ;;
-        *)
-            msg "Please answer [y]es or [n]o."
-            ;;
-        esac
-    done
-}
-
 function detect_platform() {
     local OS="$(uname -s)"
+    
     case "$OS" in
         Linux)
             if [ -f "/etc/arch-release" ] || [ -f "/etc/artix-release" ]; then
@@ -100,6 +92,14 @@ declare -a __pkg_managers=(
     "pip"
 )
 
+declare -a __npm_deps=(
+    "neovim"
+)
+
+declare -a __pip_deps=(
+    "pynvim"
+)
+
 function install_pkg_managers() {
     for pkg in "${__pkg_managers[@]}"; do
         if ! command -v ${pkg} &>/dev/null; then
@@ -111,6 +111,7 @@ function install_pkg_managers() {
 
 function __install_nodejs_deps_npm() {
     echo "Installing node modules with npm.."
+    
     for dep in "${__npm_deps[@]}"; do
         if ! npm ls -g "$dep" &>/dev/null; then
             printf "installing %s .." "$dep"
@@ -123,7 +124,9 @@ function __install_nodejs_deps_npm() {
 
 function __install_nodejs_deps_yarn() {
     echo "Installing node modules with yarn.."
+    
     yarn global add "${__npm_deps[@]}"
+
     echo "All NodeJS dependencies are successfully installed"
 }
 
@@ -151,15 +154,33 @@ function __validate_node_installation() {
 
 function install_nodejs_deps() {
     local -a pkg_managers=("yarn" "npm")
+
     for pkg_manager in "${pkg_managers[@]}"; do
         if __validate_node_installation "$pkg_manager"; then
             eval "__install_nodejs_deps_$pkg_manager"
             return
         fi
     done
+
     print_missing_dep_msg "${pkg_managers[@]}"
+    
     exit 1
 }
 
+function install_python_deps() {
+    if ! python3 -m ensurepip &>/dev/null; then
+        if ! python3 -m pip --version &>/dev/null; then
+            print_missing_dep_msg "pip"
+            exit 1
+        fi
+    fi
+  
+    echo "Installing with pip.."
+  
+    for dep in "${__pip_deps[@]}"; do
+        python3 -m pip install --user "$dep"
+    done
+    echo "All Python dependencies are successfully installed"
+}
 
 main
