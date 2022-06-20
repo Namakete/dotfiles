@@ -33,7 +33,6 @@ EOF
 
 function msg() {
     local text="$1"
-    local div_width="80"
     
     printf "%s\n" "$text"
 }
