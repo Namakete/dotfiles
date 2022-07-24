@@ -38,17 +38,17 @@ function msg() {
 }
 
 function print_missing_dep_msg() {
-  if [ "$#" -eq 1 ]; then
-    echo "[😫]: Unable to find package [$1]"
-    echo "The package $1 will bew installed"
-  else
-    local cmds
+    if [ "$#" -eq 1 ]; then
+        echo "[😫]: Unable to find package [$1]"
+        echo "The package $1 will bew installed"
+    else
+        local cmds
     
-    cmds=$(for i in "$@"; do echo "$RECOMMEND_INSTALL $i"; done)
+        cmds=$(for i in "$@"; do echo "$RECOMMEND_INSTALL $i"; done)
     
-    printf "[😣]: Unable to find dependencies [%s]" "$@"
-    printf "Please install any one of the dependencies and re-run the installer. Try: \n%s\n" "$cmds"
-  fi
+        printf "[😣]: Unable to find dependencies [%s]" "$@"
+        printf "Please install any one of the dependencies and re-run the installer. Try: \n%s\n" "$cmds"
+    fi
 }
 
 function detect_platform() {
