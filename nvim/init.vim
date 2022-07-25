@@ -1,4 +1,6 @@
 "=================================
+"Author: Ilya Oberemok (@namakete) 
+"=================================
 
 if has("eval")                               
   let skip_defaults_vim = 1
@@ -8,18 +10,22 @@ if has("syntax")
   syntax enable
 endif
 
-if version > 580
+if v:version >= 580
   hi clear
+  set listchars=space:*,trail:*,nbsp:*,extends:>,precedes:<,tab:\|>
+  set foldmethod=manual
+  set nofoldenable
   if exists("syntax_on")
       syntax reset
   endif
 endif
 
+let g:terraform_fmt_on_save = 1
+
 "=============Settigns============
 
 :set encoding=utf-8
 :set termencoding=utf-8
-
 :set number
 :set textwidth=72
 :set autoindent
@@ -39,57 +45,53 @@ endif
 :set hlsearch
 :set incsearch
 :set linebreak
-:set ttyfast
-
-"===========Mapping=============
-
-map <C-q> :wq!<CR>
-map <C-s> :w!<CR>
-nmap <C-a> gg<S-v>G
-
-map <F12> :set fdm=indent<CR>
-
-nmap ss :split<Return><C-w>w
-nmap sv :vsplit<Return><C-w>w
-
-nnoremap <leader>ff :Telescope find_files<CR>
-
-nnoremap <F2> :NERDTreeToggle<CR>
+:set clipboard+=unnamedplus
+:set clipboard^=unnamed,unnamedplus
 
 "============Color==============
 
 set background=dark
 
-hi TelescopeBorder    ctermfg=234 ctermfg=yellow cterm=NONE
-hi TelescopeSelection ctermbg=darkgreen ctermfg=black cterm=NONE 
+hi TroubleInformation             ctermbg=NONE ctermfg=yellow cterm=NONE
+hi DiagnosticInfo                 ctermbg=NONE ctermfg=yellow cterm=NONE
 
-hi CocErrorSign       ctermfg=234 ctermfg=darkred cterm=none
-hi CocWarningSign     ctermfg=234 ctermfg=yellow cterm=NONE
-hi CocFloating        guibg=#3c3b3b guifg=234 cterm=NONE 
+hi TelescopeBorder                ctermbg=NONE ctermfg=yellow cterm=NONE
+hi TelescopeSelection             ctermbg=234 ctermfg=black cterm=NONE 
 
-hi StatusLine         ctermfg=239 ctermbg=NONE cterm=NONE
-hi StatusLineNC       ctermfg=239 ctermbg=NONE cterm=NONE
-hi Pmenu              ctermfg=magenta ctermbg=234 cterm=NONE 
-hi PmenuSel           ctermfg=magenta ctermbg=233 cterm=NONE
-hi Normal             ctermbg=NONE
-hi Special            ctermfg=cyan
-hi LineNr             ctermfg=239 ctermbg=NONE cterm=NONE 
-hi SpecialKey         ctermfg=black ctermbg=NONE
-hi ModeMsg            ctermfg=black cterm=NONE ctermbg=NONE
-hi MoreMsg            ctermfg=black ctermbg=NONE
-hi NonText            ctermfg=black ctermbg=NONE
-hi vimGlobal          ctermfg=black ctermbg=NONE
-hi ErrorMsg           ctermbg=NONE ctermfg=darkred cterm=NONE
-hi Error              ctermbg=NONE ctermfg=darkred cterm=NONE
-hi SpellBad           ctermbg=234 ctermfg=darkred cterm=NONE
-hi SpellRare          ctermbg=NONE ctermfg=darkred cterm=NONE
-hi Search             ctermbg=236 ctermfg=darkred
-hi vimTodo            ctermbg=236 ctermfg=darkred
-hi Todo               ctermbg=236 ctermfg=darkred
-hi IncSearch          ctermbg=236 cterm=NONE ctermfg=darkred
-hi MatchParen         ctermbg=236 ctermfg=darkred
-hi SignColumn         ctermfg=239 ctermbg=NONE cterm=NONE 
-hi Comment            ctermfg=239 ctermbg=NONE cterm=NONE
+hi CocErrorSign                   ctermbg=NONE ctermfg=darkred cterm=none
+hi CocWarningSign                 ctermbg=NONE ctermfg=yellow cterm=NONE
+hi CocFloating                    ctermbg=234 guifg=234 cterm=NONE
+hi CocNotificationProgress        ctermbg=NONE guifg=234 cterm=NONE
+hi CocHitFloat                    ctermbg=NONE guifg=234 cterm=NONE
+hi CocListSearch                  ctermbg=NONE guifg=234 cterm=NONE
+hi CocInlayHint                   ctermbg=NONE guifg=234 cterm=NONE
+hi CocListFgBlue                  ctermbg=NONE guifg=234 cterm=NONE
+
+hi StatusLine                     ctermfg=239 ctermbg=NONE cterm=NONE
+hi StatusLineNC                   ctermfg=239 ctermbg=NONE cterm=NONE
+hi Pmenu                          ctermfg=magenta ctermbg=234 cterm=NONE 
+hi PmenuSel                       ctermfg=magenta ctermbg=233 cterm=NONE
+hi Normal                         ctermbg=NONE
+hi NormalFloat                    ctermfg=239 ctermbg=NONE cterm=NONE
+hi Visual                         ctermfg=NONE ctermbg=237 cterm=NONE
+hi Special                        ctermfg=cyan
+hi LineNr                         ctermfg=black ctermbg=NONE cterm=NONE 
+hi SpecialKey                     ctermfg=black ctermbg=NONE
+hi ModeMsg                        ctermfg=black cterm=NONE ctermbg=NONE
+hi MoreMsg                        ctermfg=black ctermbg=NONE
+hi NonText                        ctermfg=black ctermbg=NONE
+hi vimGlobal                      ctermfg=black ctermbg=NONE
+hi ErrorMsg                       ctermbg=NONE ctermfg=darkred cterm=NONE
+hi Error                          ctermbg=NONE ctermfg=darkred cterm=NONE
+hi SpellBad                       ctermbg=234 ctermfg=NONE cterm=NONE
+hi SpellRare                      ctermbg=NONE ctermfg=darkred cterm=NONE
+hi Search                         ctermbg=236 ctermfg=darkred
+hi vimTodo                        ctermbg=236 ctermfg=darkred
+hi Todo                           ctermbg=236 ctermfg=darkred
+hi IncSearch                      ctermbg=236 cterm=NONE ctermfg=darkred
+hi MatchParen                     ctermbg=236 ctermfg=darkred
+hi SignColumn                     ctermfg=239 ctermbg=NONE cterm=NONE 
+hi Comment                        ctermfg=239 ctermbg=NONE cterm=NONE
 
 au FileType * hi StatusLine ctermfg=black ctermbg=NONE
 au FileType * hi StatusLineNC ctermfg=black ctermbg=NONE
@@ -120,29 +122,43 @@ au FileType c set sw=8
 
 set ruf=%30(%=%#LineNr#%.50F\ [%{strlen(&ft)?&ft:'none'}]\ %l:%c\ %p%%%)
 
+"===========Mapping=============
+
+map <C-q> :q!<CR>
+map <C-s> :w!<CR>
+nmap <C-a> gg<S-v>G
+map <F12> :set fdm=indent<CR>
+nmap ss :split<Return><C-w>w
+nmap sv :vsplit<Return><C-w>w
+nnoremap <leader>ff :Telescope find_files<CR>
+nnoremap <F2> :NERDTreeToggle<CR>
+
 "=========Plug Installer==========
 
+if has("nvim")
+  let g:plug_home = stdpath('data') . '/plugged'
+endif
+
 call plug#begin('~/.vim/plugged')
-	Plug 'morhetz/gruvbox'
-  Plug 'nvim-lua/plenary.nvim'
-	Plug 'scrooloose/nerdtree', {'on':  'NERDTreeToggle'}
-	Plug 'frazrepo/vim-rainbow'
-  Plug 'vim-pandoc/vim-pandoc'
-  Plug 'rwxrob/vim-pandoc-syntax-simple'
-  Plug 'fatih/vim-go', {'do': ':GoInstallBinaries'}
-  Plug 'tpope/vim-fugitive'
-  Plug 'hashivim/vim-terraform'
-  Plug 'neoclide/coc.nvim', {'branch': 'release'}
-  Plug 'metakirby5/codi.vim'
-  Plug 'nvim-telescope/telescope.nvim', {'tag': '0.1.0'}
-  Plug 'akinsho/flutter-tools.nvim'
+  if has("nvim")
+  	Plug 'morhetz/gruvbox'
+    Plug 'nvim-lua/plenary.nvim'
+  	Plug 'scrooloose/nerdtree', {'on':  'NERDTreeToggle'}
+  	Plug 'frazrepo/vim-rainbow'
+    Plug 'vim-pandoc/vim-pandoc'
+    Plug 'rwxrob/vim-pandoc-syntax-simple'
+    Plug 'fatih/vim-go', {'do': ':GoInstallBinaries'}
+    Plug 'tpope/vim-fugitive'
+    Plug 'hashivim/vim-terraform'
+    Plug 'neoclide/coc.nvim', {'branch': 'release'}
+    Plug 'metakirby5/codi.vim'
+    Plug 'nvim-telescope/telescope.nvim', {'tag': '0.1.0'}
+    Plug 'akinsho/flutter-tools.nvim'
+    Plug 'nvim-treesitter/nvim-treesitter'
+  endif
 call plug#end()
 
-"=================================
-
-let g:terraform_fmt_on_save = 1
-
-"===========Lsp Servers===========
+"=======Lsp Servers Config========
 
 let g:coc_global_extensions=[
             \'coc-css',
@@ -160,7 +176,7 @@ let g:coc_global_extensions=[
             \'coc-go',
             \]
 
-"============Telescope=============
+"=========Telescope Config========
 
 lua << EOF
 
@@ -214,6 +230,8 @@ require('telescope').setup {
 
 EOF
 
+"=======Flutter Tools Config=======
+
 lua << EOF
 
 require("flutter-tools").setup {
@@ -240,3 +258,55 @@ require("flutter-tools").setup {
 }
 
 EOF
+
+"================================
+lua << EOF
+
+require'nvim-treesitter.configs'.setup {
+  -- A list of parser names, or "all"
+  ensure_installed = { "c", "lua", "rust" },
+
+  -- Install parsers synchronously (only applied to `ensure_installed`)
+  sync_install = false,
+
+  -- Automatically install missing parsers when entering buffer
+  auto_install = true,
+
+  -- List of parsers to ignore installing (for "all")
+  ignore_install = { "javascript" },
+
+  highlight = {
+    -- `false` will disable the whole extension
+    enable = true,
+
+    -- NOTE: these are the names of the parsers and not the filetype. (for example if you want to
+    -- disable highlighting for the `tex` filetype, you need to include `latex` in this list as this is
+    -- the name of the parser)
+    -- list of language that will be disabled
+    disable = { 
+      "c", 
+      "cpp", 
+      "c_sharp", 
+      "rust", 
+      "dart", 
+      "lua", 
+      "bash", 
+      "css", 
+      "python", 
+      "fish", 
+      "go", 
+      "json", 
+      "php", 
+      "scss",
+      "vim"},
+
+    -- Setting this to true will run `:h syntax` and tree-sitter at the same time.
+    -- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).
+    -- Using this option may slow down your editor, and you may see some duplicate highlights.
+    -- Instead of true it can also be a list of languages
+    additional_vim_regex_highlighting = false,
+  },
+}
+
+EOF
+
