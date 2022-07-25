@@ -4,9 +4,22 @@ if has("eval")
   let skip_defaults_vim = 1
 endif
 
+if has("syntax")
+  syntax enable
+endif
+
+if version > 580
+  hi clear
+  if exists("syntax_on")
+      syntax reset
+  endif
+endif
+
 "=============Settigns============
 
 :set encoding=utf-8
+:set termencoding=utf-8
+
 :set number
 :set textwidth=72
 :set autoindent
@@ -28,10 +41,6 @@ endif
 :set linebreak
 :set ttyfast
 
-if has("syntax")
-  syntax enable
-endif
-
 "===========Mapping=============
 
 map <C-q> :wq!<CR>
@@ -51,36 +60,36 @@ nnoremap <F2> :NERDTreeToggle<CR>
 
 set background=dark
 
-hi TelescopeBorder ctermfg=234 ctermfg=yellow cterm=NONE
+hi TelescopeBorder    ctermfg=234 ctermfg=yellow cterm=NONE
 hi TelescopeSelection ctermbg=darkgreen ctermfg=black cterm=NONE 
 
-hi CocErrorSign ctermfg=234 ctermfg=darkred cterm=none
-hi CocWarningSign ctermfg=234 ctermfg=yellow cterm=NONE
-hi CocFloating guibg=#3c3b3b guifg=234 cterm=NONE 
+hi CocErrorSign       ctermfg=234 ctermfg=darkred cterm=none
+hi CocWarningSign     ctermfg=234 ctermfg=yellow cterm=NONE
+hi CocFloating        guibg=#3c3b3b guifg=234 cterm=NONE 
 
-hi GitSignsAdd ctermfg=234 ctermfg=green cterm=NONE
-hi GitSignsChange ctermfg=234 ctermfg=yellow cterm=NONE
-
-hi StatusLine ctermfg=black ctermbg=NONE cterm=NONE
-hi StatusLineNC ctermfg=black ctermbg=NONE cterm=NONE
-hi Normal ctermbg=NONE
-hi Special ctermfg=cyan
-hi LineNr ctermfg=black cterm=NONE 
-hi SpecialKey ctermfg=black ctermbg=NONE
-hi ModeMsg ctermfg=black cterm=NONE ctermbg=NONE
-hi MoreMsg ctermfg=black ctermbg=NONE
-hi NonText ctermfg=black ctermbg=NONE
-hi vimGlobal ctermfg=black ctermbg=NONE
-hi ErrorMsg ctermbg=234 ctermfg=darkred cterm=NONE
-hi Error ctermbg=234 ctermfg=darkred cterm=NONE
-hi SpellBad ctermbg=234 ctermfg=darkred cterm=NONE
-hi SpellRare ctermbg=234 ctermfg=darkred cterm=NONE
-hi Search ctermbg=236 ctermfg=darkred
-hi vimTodo ctermbg=236 ctermfg=darkred
-hi Todo ctermbg=236 ctermfg=darkred
-hi IncSearch ctermbg=236 cterm=NONE ctermfg=darkred
-hi MatchParen ctermbg=236 ctermfg=darkred
-hi SignColumn ctermfg=black ctermbg=NONE cterm=NONE 
+hi StatusLine         ctermfg=239 ctermbg=NONE cterm=NONE
+hi StatusLineNC       ctermfg=239 ctermbg=NONE cterm=NONE
+hi Pmenu              ctermfg=magenta ctermbg=234 cterm=NONE 
+hi PmenuSel           ctermfg=magenta ctermbg=233 cterm=NONE
+hi Normal             ctermbg=NONE
+hi Special            ctermfg=cyan
+hi LineNr             ctermfg=239 ctermbg=NONE cterm=NONE 
+hi SpecialKey         ctermfg=black ctermbg=NONE
+hi ModeMsg            ctermfg=black cterm=NONE ctermbg=NONE
+hi MoreMsg            ctermfg=black ctermbg=NONE
+hi NonText            ctermfg=black ctermbg=NONE
+hi vimGlobal          ctermfg=black ctermbg=NONE
+hi ErrorMsg           ctermbg=NONE ctermfg=darkred cterm=NONE
+hi Error              ctermbg=NONE ctermfg=darkred cterm=NONE
+hi SpellBad           ctermbg=234 ctermfg=darkred cterm=NONE
+hi SpellRare          ctermbg=NONE ctermfg=darkred cterm=NONE
+hi Search             ctermbg=236 ctermfg=darkred
+hi vimTodo            ctermbg=236 ctermfg=darkred
+hi Todo               ctermbg=236 ctermfg=darkred
+hi IncSearch          ctermbg=236 cterm=NONE ctermfg=darkred
+hi MatchParen         ctermbg=236 ctermfg=darkred
+hi SignColumn         ctermfg=239 ctermbg=NONE cterm=NONE 
+hi Comment            ctermfg=239 ctermbg=NONE cterm=NONE
 
 au FileType * hi StatusLine ctermfg=black ctermbg=NONE
 au FileType * hi StatusLineNC ctermfg=black ctermbg=NONE
@@ -126,7 +135,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
   Plug 'metakirby5/codi.vim'
   Plug 'nvim-telescope/telescope.nvim', {'tag': '0.1.0'}
-  Plug 'lewis6991/gitsigns.nvim'
+  Plug 'akinsho/flutter-tools.nvim'
 call plug#end()
 
 "=================================
@@ -205,59 +214,29 @@ require('telescope').setup {
 
 EOF
 
-"============GitSigns==============
-
 lua << EOF
 
-require('gitsigns').setup {
-    signs = {
-        add          = {hl = 'GitSignsAdd'   , text = '+', numhl='GitSignsAddNr'   , linehl='GitSignsAddLn'},
-        change       = {hl = 'GitSignsChange', text = '~', numhl='GitSignsChangeNr', linehl='GitSignsChangeLn'},
-        delete       = {hl = 'GitSignsDelete', text = '_', numhl='GitSignsDeleteNr', linehl='GitSignsDeleteLn'},
-        topdelete    = {hl = 'GitSignsDelete', text = '‾', numhl='GitSignsDeleteNr', linehl='GitSignsDeleteLn'},
-        changedelete = {hl = 'GitSignsChange', text = '~', numhl='GitSignsChangeNr', linehl='GitSignsChangeLn'},
-    },
-    signcolumn = true,
-    numhl      = false,
-    linehl     = false,
-    word_diff  = false,
-    watch_gitdir = {
-        interval = 1000,
-        follow_files = true
-    },
-    attach_to_untracked = true,
-    current_line_blame = false,
-    current_line_blame_opts = {
-        virt_text = true,
-        virt_text_pos = 'eol',
-        delay = 1000,
-        ignore_whitespace = false,
-    },
-    current_line_blame_formatter = '<author>, <author_time:%Y-%m-%d> - <summary>',
-    sign_priority = 6,
-    update_debounce = 100,
-    status_formatter = nil,
-    max_file_length = 40000,
-    preview_config = {
-        border = 'single',
-        style = 'minimal',
-        relative = 'cursor',
-        row = 0,
-        col = 1
-    },
-    yadm = {
-        enable = false
-    },
-    on_attach = function(bufnr)
-        local gs = package.loaded.gitsigns
-        local function map(mode, l, r, opts)
-            opts = opts or {}
-            opts.buffer = bufnr
-            vim.keymap.set(mode, l, r, opts)
-        end
-    end
+require("flutter-tools").setup {
+  ui = {
+    border = "rounded",
+    notification_style = 'native' ,
+  },
+  closing_tags = {
+    highlight = "ErrorMsg",
+    prefix = ">",
+    enabled = false
+  },
+  dev_tools = {
+    autostart = false,
+    auto_open_browser = false, 
+  },
+  settings = {
+    showTodos = true,
+    completeFunctionCalls = true,
+    analysisExcludedFolders = {"<path-to-flutter-sdk-packages>"},
+    renameFilesWithClasses = "prompt",
+    enableSnippets = true,
+  },
 }
 
 EOF
-
-"=================================
