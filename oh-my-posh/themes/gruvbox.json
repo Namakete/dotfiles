@@ -4,19 +4,19 @@
             "alignment": "left",
             "segments": [
                 {
-                    "foreground": "#FFBD00",
+                    "foreground": "yellow",
                     "style": "plain",
                     "template": "<#504945>╔</> {{ .UserName }}<#504945>@</>",
                     "type": "session"
                 },
                 {
-                    "foreground": "#B16286",
+                    "foreground": "blue",
                     "style": "plain",
                     "template": "{{ .HostName }}<#504945>:</>",
                     "type": "session"
                 },
                 {
-                    "foreground": "#00C6F7",
+                    "foreground": "#b06185",
                     "properties": {
                         "style": "folder"
                     },
@@ -25,34 +25,13 @@
                     "type": "path"
                 },
                 {
-                    "foreground": "#F62F2E",
+                    "foreground": "red",
                     "properties": {
                         "fetch_status": true
                     },
                     "style": "plain",
-                    "template": "<#504945>:</><#98971a>git</><#504945>(</>{{ .HEAD }}{{ .BranchStatus }}{{ if .Working.Changed }} \uf044 {{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }} \uf046 {{ .Staging.String }}{{ end }}<#504945>)</>",
+                    "template": "<#504945>(</>{{ .HEAD }}<#504945>)</>",
                     "type": "git"
-                },
-                {
-                    "foreground": "#458588",
-                    "style": "plain",
-                    "template": "{{if .Version}} <#504945>is</> \uf487 {{.Version}} {{end}}",
-                    "type": "project"
-                },
-                {
-                    "foreground": "#689d6a",
-                    "properties": {
-                        "fetch_version": true
-                    },
-                    "style": "plain",
-                    "template": "<#504945>via</> \ue781 {{ if .PackageManagerIcon }}{{ .PackageManagerIcon }} {{ end }}{{ .Full }}",
-                    "type": "node"
-                },
-                {
-                    "foreground": "#FE4934",
-                    "style": "plain",
-                    "template": "<#504945> and</> \ue71e {{.Full}} ",
-                    "type": "npm"
                 }
             ],
             "type": "prompt"
@@ -62,7 +41,7 @@
             "newline": true,
             "segments": [
                 {
-                    "foreground": "#00C6F7",
+                    "foreground": "blue",
                     "style": "plain",
                     "template": "<#504945>╚</> $",
                     "type": "text"
