@@ -1,10 +1,10 @@
 #!/bin/sh
 
-if [ -z "$(which tmux)"]; then
+if [ -z "$(which tmux)" ]; then
   echo "🥸 Warning, doesn't look like you have Tmux."
 fi
 
-if [ -z "$(which vim)"]; then
+if [ -z "$(which vim)" ]; then
   echo "🥸 Warning, doesn't look like you have Vim."
 fi
 

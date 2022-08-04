@@ -7,12 +7,9 @@ if v:version >= 500
   :set listchars=space:*,trail:*,nbsp:*,extends:>,precedes:<,tab:\|>
   :set foldmethod=manual
   :set nofoldenable
-  if exists("syntax_on")
-      syntax reset
-  endif
 endif
 
-if has("eval")                               
+if has("eval")
   let skip_defaults_vim = 1
 endif
 
@@ -33,6 +30,8 @@ let g:terraform_fmt_on_save = 1
 :set encoding=utf-8
 :set termencoding=utf-8
 :set textwidth=72
+:set nonumber
+:set ruler
 :set autoindent
 :set autowrite
 :set showmode
@@ -42,6 +41,7 @@ let g:terraform_fmt_on_save = 1
 :set smartindent
 :set smarttab
 :set expandtab
+:set wrapscan
 :set nobackup
 :set noswapfile
 :set nowritebackup
@@ -50,9 +50,12 @@ let g:terraform_fmt_on_save = 1
 :set hlsearch
 :set incsearch
 :set linebreak
+:set cinoptions+=:0
 :set clipboard+=unnamedplus
 :set ruf=%30(%=%#LineNr#%.50F\ [%{strlen(&ft)?&ft:'none'}]\ %l:%c\ %p%%%)
 :set wildmenu
+:set ttyfast
+:set omnifunc=syntaxcomplete#Complete
 
 "============Color==============
 
@@ -69,6 +72,8 @@ hi Pmenu ctermfg=magenta ctermbg=234 cterm=NONE
 hi PmenuSel ctermfg=magenta ctermbg=232 cterm=NONE
 hi PmenuSbar ctermbg=233 cterm=NONE
 hi PmenuThumb ctermbg=magenta cterm=NONE
+
+hi VertSplit ctermfg=234 ctermbg=234 cterm=NONE
 
 hi ErrorMsg ctermbg=NONE ctermfg=darkred cterm=NONE
 hi Error ctermbg=NONE ctermfg=darkred cterm=NONE
@@ -88,7 +93,7 @@ hi MoreMsg ctermfg=black ctermbg=NONE
 hi NonText ctermfg=black ctermbg=NONE
 hi SpellBad ctermbg=234 ctermfg=NONE cterm=NONE
 hi SpellRare ctermbg=NONE ctermfg=darkred cterm=NONE
-hi MatchParen ctermbg=236 ctermfg=darkred
+hi MatchParen ctermbg=235 ctermfg=darkred
 hi Comment ctermfg=239 ctermbg=NONE cterm=NONE
 
 hi TroubleInformation ctermbg=NONE ctermfg=yellow cterm=NONE
@@ -142,8 +147,9 @@ nmap <C-a> gg<S-v>G
 nmap ss :split<Return><C-w>w
 nmap sv :vsplit<Return><C-w>w
 nnoremap <leader>ff :Telescope find_files<CR>
-nnoremap <F2> :NERDTreeToggle<CR>
 map <F1> :set number!<CR> :set relativenumber!<CR>
+nnoremap <F2> :NERDTreeToggle<CR>
+map <F3> :set list!<CR>
 
 "=========PlugInstaller==========
 
@@ -236,6 +242,7 @@ let g:coc_global_extensions=[
             \'coc-cmake',
             \'coc-go',
             \'coc-snippets',
+            \'coc-highlight',
             \]
 
 "=========Telescope========
@@ -337,3 +344,19 @@ require("flutter-tools").setup {
 }
 EOF
 
+let g:go_fmt_fail_silently = 0
+let g:go_fmt_command = 'goimports'
+let g:go_fmt_autosave = 1
+let g:go_gopls_enabled = 1
+let g:go_auto_sameids = 0
+let g:go_highlight_types = 1
+let g:go_highlight_fields = 1
+let g:go_highlight_functions = 1
+let g:go_highlight_function_calls = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_extra_types = 1
+let g:go_highlight_variable_declarations = 1
+let g:go_highlight_variable_assignments = 1
+let g:go_highlight_build_constraints = 1
+let g:go_highlight_diagnostic_errors = 1
+let g:go_highlight_diagnostic_warnings = 1
