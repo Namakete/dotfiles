@@ -13,6 +13,6 @@ fi
 echo "${clear}"
 while true; do
   echo "${top}"
-  toilet -f future <<<"$what" | lolcat
+  figlet -c -f pebbles <<<"$what" | lolcat
   sleep 2
 done

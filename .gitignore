@@ -1,3 +1,5 @@
+.DS_Store
+
 coc/
 yarn/
 flutter/
@@ -6,4 +8,6 @@ iterm2/
 kitty/
 mc/
 neofetch/
+htop/
+lazygit/
 

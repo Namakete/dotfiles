@@ -59,10 +59,11 @@ let g:terraform_fmt_on_save = 1
 
 "============Color==============
 
-hi Normal ctermbg=235
+hi Normal ctermbg=NONE
 hi NormalFloat ctermfg=239 ctermbg=NONE cterm=NONE
+hi EndOfBuffer ctermfg=235 ctermbg=NONE cterm=NONE
 
-hi LineNr ctermfg=black ctermbg=NONE cterm=NONE 
+hi LineNr ctermfg=235 ctermbg=NONE cterm=NONE 
 hi SignColumn ctermfg=239 ctermbg=NONE cterm=NONE 
 
 hi StatusLine ctermfg=239 ctermbg=NONE cterm=NONE
@@ -95,6 +96,7 @@ hi SpellBad ctermbg=234 ctermfg=NONE cterm=NONE
 hi SpellRare ctermbg=NONE ctermfg=darkred cterm=NONE
 hi MatchParen ctermbg=235 ctermfg=darkred
 hi Comment ctermfg=239 ctermbg=NONE cterm=NONE
+hi CursorLine ctermfg=NONE ctermbg=234 cterm=NONE
 
 hi TroubleInformation ctermbg=NONE ctermfg=yellow cterm=NONE
 hi DiagnosticInfo ctermbg=NONE ctermfg=yellow cterm=NONE
@@ -111,6 +113,9 @@ hi CocListSearch ctermbg=NONE guifg=234 cterm=NONE
 hi CocInlayHint ctermbg=NONE guifg=234 cterm=NONE
 hi CocListFgBlue ctermbg=NONE guifg=234 cterm=NONE
 hi CocMenuSel ctermfg=magenta ctermbg=232 cterm=NONE
+hi CocErrorHighlight ctermfg=1 ctermbg=234 cterm=NONE
+hi CocUnusedHighlight ctermfg=NONE ctermbg=234 cterm=NONE
+hi CocPumSearch ctermfg=4 ctermbg=NONE cterm=NONE
 
 au FileType * hi StatusLine ctermfg=black ctermbg=NONE
 au FileType * hi StatusLineNC ctermfg=black ctermbg=NONE
@@ -147,7 +152,7 @@ nmap <C-a> gg<S-v>G
 nmap ss :split<Return><C-w>w
 nmap sv :vsplit<Return><C-w>w
 nnoremap <leader>ff :Telescope find_files<CR>
-map <F1> :set number!<CR> :set relativenumber!<CR>
+map <F1> :set number!<CR>
 nnoremap <F2> :NERDTreeToggle<CR>
 map <F3> :set list!<CR>
 
@@ -263,7 +268,7 @@ require('telescope').setup {
             'rg', '--no-heading', '--with-filename', '--line-number', '--column', '--smart-case'
         },
         prompt_prefix = " ",
-        selection_caret = " ",
+        selection_caret = "> ",
         entry_prefix = "  ",
         initial_mode = "insert",
         selection_strategy = "reset",
@@ -344,9 +349,11 @@ require("flutter-tools").setup {
 }
 EOF
 
+"=======FlutterTools=======
+
 let g:go_fmt_fail_silently = 0
 let g:go_fmt_command = 'goimports'
-let g:go_fmt_autosave = 1
+let g:go_fmt_autosave = 0
 let g:go_gopls_enabled = 1
 let g:go_auto_sameids = 0
 let g:go_highlight_types = 1
@@ -358,5 +365,5 @@ let g:go_highlight_extra_types = 1
 let g:go_highlight_variable_declarations = 1
 let g:go_highlight_variable_assignments = 1
 let g:go_highlight_build_constraints = 1
-let g:go_highlight_diagnostic_errors = 1
-let g:go_highlight_diagnostic_warnings = 1
+let g:go_highlight_diagnostic_errors = 0
+let g:go_highlight_diagnostic_warnings = 0

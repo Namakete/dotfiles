@@ -1,55 +1,56 @@
 {
-    "blocks": [
+  "blocks": [
+    {
+      "alignment": "left",
+      "segments": [
         {
-            "alignment": "left",
-            "segments": [
-                {
-                    "foreground": "yellow",
-                    "style": "plain",
-                    "template": "<#504945>╔</> {{ .UserName }}<#504945>@</>",
-                    "type": "session"
-                },
-                {
-                    "foreground": "blue",
-                    "style": "plain",
-                    "template": "{{ .HostName }}<#504945>:</>",
-                    "type": "session"
-                },
-                {
-                    "foreground": "#b06185",
-                    "properties": {
-                        "style": "folder"
-                    },
-                    "style": "plain",
-                    "template": "{{ .Path }}",
-                    "type": "path"
-                },
-                {
-                    "foreground": "red",
-                    "properties": {
-                        "fetch_status": true
-                    },
-                    "style": "plain",
-                    "template": "<#504945>(</>{{ .HEAD }}<#504945>)</>",
-                    "type": "git"
-                }
-            ],
-            "type": "prompt"
+          "foreground": "yellow",
+          "style": "plain",
+          "template": "<#504945>╔</> {{ .UserName }}<#504945>@</>",
+          "type": "session"
         },
         {
-            "alignment": "left",
-            "newline": true,
-            "segments": [
-                {
-                    "foreground": "blue",
-                    "style": "plain",
-                    "template": "<#504945>╚</> $",
-                    "type": "text"
-                }
-            ],
-            "type": "prompt"
+          "foreground": "blue",
+          "style": "plain",
+          "template": "{{ .HostName }}<#504945>:</>",
+          "type": "session"
+        },
+        {
+          "foreground": "#b06185",
+          "properties": {
+            "style": "folder"
+          },
+          "style": "plain",
+          "template": "{{ .Path }}",
+          "type": "path"
+        },
+        {
+          "foreground": "red",
+          "properties": {
+            "branch_icon": "",
+            "fetch_status": false
+          },
+          "style": "plain",
+          "template": "<#504945>(</>{{ .HEAD }}<#504945>)</>",
+          "type": "git"
         }
-    ],
-    "final_space": true,
-    "version": 2
+      ],
+      "type": "prompt"
+    },
+    {
+      "alignment": "left",
+      "newline": true,
+      "segments": [
+        {
+          "foreground": "blue",
+          "style": "plain",
+          "template": "<#504945>╚</> $",
+          "type": "text"
+        }
+      ],
+      "type": "prompt"
+    }
+  ],
+  "final_space": true,
+  "version": 2
 }
