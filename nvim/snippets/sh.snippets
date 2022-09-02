@@ -1,10 +1,16 @@
 snippet #!
 	#!/usr/bin/env ${0:language}
 
-snippet bash
-	#!/usr/bin/env bash
+snippet main
+	main(){
+		# code...	
+	}
+
+	main "$@"
+
+	
 
 snippet fun
-	function ${1:function_name}() {
+	${1:function_name}() {
 		${0:#function_body}
 	}
