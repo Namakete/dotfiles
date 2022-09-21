@@ -19,6 +19,11 @@ alias la "ls -A"
 alias ll "exa --long --git --icons"
 alias lla "ll -a"
 alias bat "bat --theme='gruvbox-dark'"
+alias tl "tree -L 1"
+
+# FZF
+alias ff "find * -type f | fzf > selected"
+alias fgb "git branch | fzf-tmux -d 15"
 
 # Git
 alias g git
@@ -32,3 +37,4 @@ alias 255color "~/.config/scripts/255color"
 alias banner "~/.config/scripts/banner" 
 alias covid "~/.config/scripts/covid" 
 alias workspace "~/.config/scripts/workspace" 
+alias newx "~/github/newx/new-x/main" 
