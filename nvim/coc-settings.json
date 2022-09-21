@@ -1,16 +1,19 @@
 {
-  "jedi.executable.command": "jedi-language-server",
+  "diagnostic.enable": true,
+  "diagnostic.errorSign": ">>",
+  "diagnostic.warningSign": ">>",
+  "diagnostic.infoSign": ">>",
+  "diagnostic.hintSign": ">!",
+  "diagnostic.enableMessage": "always",
+
+  "clangd.path": "~/.config/coc/extensions/coc-clangd-data/install/15.0.0/clangd_15.0.0/bin/clangd",
+
   "snippets.userSnippetsDirectory": "~/.config/nvim/snippets",
   "languageserver": {
     "fortran": {
       "command": "fortls",
-      "filetypes": [
-        "fortran"
-      ],
-      "rootPatterns": [
-        ".fortls",
-        ".git/"
-      ]
+      "filetypes": ["fortran"],
+      "rootPatterns": [".fortls", ".git/"]
     }
   }
 }

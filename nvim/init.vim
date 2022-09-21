@@ -4,84 +4,84 @@
 " When Vim starts, the 'compatible' option is on. This will be used when Vim starts its
 " initializations. But as soon as a user vimrc file is found, or a vimrc file in the current
 " directory, or the "VIMINIT" environment variable is set, it will be set to 'nocompatible'.
+"red
 set nocompatible
-" Encoding sets how vim shall represent characters internally. Utf-8 is necessary for most
-" flavors of Unicode.
+"" Encoding sets how vim shall represent characters internally. Utf-8 is necessary for most
+"" flavors of Unicode.
 set encoding=utf-8
 set termencoding=utf-8
-" Automatically indent new lines.
+"" Automatically indent new lines.
 set autoindent
-" Automatically write files when changing when multiple files open.
+"" Automatically write files when changing when multiple files open.
 set autowrite
-" Deactivate line numbers.
+"" Deactivate line numbers.
 set nonumber
-" Disable relative line numbers.
+"" Disable relative line numbers.
 set norelativenumber
-" Turn column and row position on in bottom right.
+"" Turn column and row position on in bottom right.
 set ruler
 set ruf=%30(%=%#LineNr#%.50F\ [%{strlen(&ft)?&ft:'none'}]\ %l:%c\ %p%%%)
-" Show command and insert mode.
+"" Show command and insert mode.
 set showmode
-" TODO: Add comment
+"" TODO: Add comment
 set tabstop=2
-" TODO: Add comment
+"" TODO: Add comment
 set softtabstop=2
-" TODO: Add comment
+"" TODO: Add comment
 set shiftwidth=2
-" TODO: Add comment
+"" TODO: Add comment
 set smartindent
-" TODO: Add comment
+"" TODO: Add comment
 set smarttab
-
+"
 if (v:version >= 800)
   " stop vim from silently messing with files that it shouldn't
   set nofixendofline
   " better ascii friendly listchars
   set listchars=space:*,trail:*,nbsp:*,extends:>,precedes:<,tab:\|>
-  " i hate automatic folding
-  set foldmethod=manual
+  "set foldmethod=manual
   set nofoldenable
 endif
-
-" Mark trailing spaces as errors.
+"
+"" Mark trailing spaces as errors.
 match IncSearch '\s\+$'
-" Textwidth (or tw): controls the wrap width you would like to use. Use :set tw=72 to set the 
-" wrap width; by default it's unset and thus disables line-wrapping. If this value is set, 
-" you're entirely at the whimsy of the below formatoptions, which is often filetype sensitive.
+"" Textwidth (or tw): controls the wrap width you would like to use. Use :set tw=72 to set the
+"" wrap width; by default it's unset and thus disables line-wrapping. If this value is set,
+"" you're entirely at the whimsy of the below formatoptions, which is often filetype sensitive.
 set textwidth=72
-" Replace tabs with spaces automatically.
+"" Replace tabs with spaces automatically.
 set expandtab
-" Disable spell check.
+"" Disable spell check.
 set nospell
-" TODO: Add comment
+"" TODO: Add comment
 set nobackup
-" TODO: Add comment
+"" TODO: Add comment
 set noswapfile
-" TODO: Add comment
+"" TODO: Add comment
 set nowritebackup
-" TODO: Add comment
+"" TODO: Add comment
 set icon
-" Highlight search hits.
-set hlsearch
+"" Highlight search hits.
+set nohlsearch
 set incsearch
 set linebreak
-" The showmatch option is also useful: it can reduce the need for %, the cursor will briefly jump 
-" to the matching brace when you insert one.
-set noshowmatch
-" By default, the 'wrapscan' option is on, which means that when "search next" reaches end of file, 
-" it wraps around to the beginning, and when "search previous" reaches the beginning, it wraps 
-" around to the end.
-set wrapscan
-" TODO: Add comment
-set hidden
-" TODO: Add comment
-set history=20
-" When expressions span multiple lines, you may want to line up the beginning of those lines with 
-" the beginning of the expression in the first line.
-set cinoptions+=:0
+"" The showmatch option is also useful: it can reduce the need for %, the cursor will briefly jump
+"" to the matching brace when you insert one.
+"set noshowmatch
+"" By default, the 'wrapscan' option is on, which means that when "search next" reaches end of file,
+"" it wraps around to the beginning, and when "search previous" reaches the beginning, it wraps
+"" around to the end.
+"set wrapscan
+"" TODO: Add comment
+"set hidden
+"" TODO: Add comment
+"set history=20
+"" When expressions span multiple lines, you may want to line up the beginning of those lines with
+"" the beginning of the expression in the first line.
+"set cinoptions+=:0
 " Allow sensing the filetype.
 filetype plugin on
-" For syntax highlighting there are two sets of default color maps: One for a light and another one 
+" For syntax highlighting there are two sets of default color maps: One for a light and another one
 " for a dark background.
 set background=dark
 
@@ -113,11 +113,11 @@ hi ErrorMsg ctermbg=NONE ctermfg=darkred cterm=NONE
 hi Error ctermbg=NONE ctermfg=darkred cterm=NONE
 
 hi Search ctermbg=233 ctermfg=darkred
-hi IncSearch ctermbg=236 cterm=NONE ctermfg=darkred
+hi IncSearch ctermbg=233 cterm=NONE ctermfg=darkred
 
 hi vimGlobal ctermfg=black ctermbg=NONE
 hi vimTodo ctermbg=233 ctermfg=darkred
-hi Todo ctermbg=236 ctermfg=darkred
+hi Todo ctermbg=233 ctermfg=darkred
 
 hi Special ctermfg=cyan
 hi SpecialKey ctermfg=black ctermbg=NONE
@@ -137,7 +137,7 @@ hi DiagnosticInfo ctermbg=NONE ctermfg=yellow cterm=NONE
 hi TelescopeBorder ctermbg=NONE ctermfg=yellow cterm=NONE
 hi TelescopeSelection ctermbg=234 ctermfg=black cterm=NONE
 
-hi CocErrorSign ctermbg=NONE ctermfg=darkred cterm=none
+hi CocErrorSign ctermbg=NONE ctermfg=darkred cterm=NONE
 hi CocWarningSign ctermbg=NONE ctermfg=yellow cterm=NONE
 hi CocFloating ctermbg=234 guifg=234 cterm=NONE
 hi CocNotificationProgress  ctermfg=darkyellow cterm=NONE
@@ -146,7 +146,8 @@ hi CocListSearch ctermbg=NONE guifg=234 cterm=NONE
 hi CocInlayHint ctermbg=NONE guifg=234 cterm=NONE
 hi CocListFgBlue ctermbg=NONE guifg=234 cterm=NONE
 hi CocMenuSel ctermfg=magenta ctermbg=232 cterm=NONE
-hi CocErrorHighlight ctermfg=1 ctermbg=234 cterm=NONE
+hi CocErrorHighlight ctermfg=1 ctermbg=234 cterm=UNDERLINE
+hi CocWarningHighlight ctermfg=yellow ctermbg=234 cterm=UNDERLINE
 hi CocUnusedHighlight ctermfg=NONE ctermbg=234 cterm=NONE
 hi CocPumSearch ctermfg=4 ctermbg=NONE cterm=NONE
 
@@ -186,7 +187,9 @@ nmap sv :vsplit<Return><C-w>w
 nnoremap <leader>ff :Telescope find_files<CR>
 map <F1> :set number!<CR>
 nnoremap <F2> :NERDTreeToggle<CR>
-map <F3> :set list!<CR>
+nnoremap <F3> :Autoformat<CR>
+nnoremap <F4> :RainbowToggle<CR>
+map <F12> :set list!<CR>
 
 " ============================
 " vim-plug: Vim plugin manager
@@ -249,6 +252,8 @@ if has("nvim")
   Plug 'akinsho/flutter-tools.nvim'
   " This plugin adds Go language support for Vim.
   Plug 'fatih/vim-go', {'do': ':GoInstallBinaries'}
+
+  Plug 'frazrepo/vim-rainbow'
 endif
 call plug#end()
 
@@ -323,6 +328,9 @@ let g:coc_global_extensions=[
       \'coc-go',
       \'coc-snippets',
       \'coc-highlight',
+      \'coc-docker',
+      \'coc-dot-complete',
+      \'coc-dash-complete',
       \]
 
 " ============================
@@ -448,3 +456,19 @@ let g:go_highlight_variable_assignments = 1
 let g:go_highlight_build_constraints = 1
 let g:go_highlight_diagnostic_errors = 0
 let g:go_highlight_diagnostic_warnings = 0
+
+" ============================
+" vim-plug: Vim plugin manager
+" ============================
+
+let g:rainbow_active = 0
+
+let g:rainbow_load_separately = [
+      \ [ '*' , [['(', ')'], ['\[', '\]'], ['{', '}']] ],
+      \ [ '*.tex' , [['(', ')'], ['\[', '\]']] ],
+      \ [ '*.cpp' , [['(', ')'], ['\[', '\]'], ['{', '}']] ],
+      \ [ '*.{html,htm}' , [['(', ')'], ['\[', '\]'], ['{', '}'], ['<\a[^>]*>', '</[^>]*>']] ],
+      \ ]
+
+let g:rainbow_guifgs = ['RoyalBlue3', 'DarkOrange3', 'DarkOrchid3', 'FireBrick']
+let g:rainbow_ctermfgs = ['lightblue', 'lightgreen', 'yellow', 'red', 'magenta']
