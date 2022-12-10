@@ -92,95 +92,65 @@ if exists("syntax_on")
 endif
 
 " TODO: Fix colorscheme
-hi Normal guibg=bg
-hi NormalFloat ctermfg=239 ctermbg=NONE cterm=NONE
-hi EndOfBuffer ctermfg=235 ctermbg=NONE cterm=NONE
+hi Normal                   guibg=bg
+hi NormalFloat              ctermfg=239 ctermbg=NONE cterm=NONE
+hi EndOfBuffer              ctermfg=235 ctermbg=NONE cterm=NONE
 
-hi LineNr ctermfg=235 ctermbg=NONE cterm=NONE
-hi SignColumn ctermfg=239 ctermbg=NONE cterm=NONE
+hi LineNr                   ctermfg=235 ctermbg=NONE cterm=NONE
+hi SignColumn               ctermfg=239 ctermbg=NONE cterm=NONE
 
-hi StatusLine ctermfg=239 ctermbg=NONE cterm=NONE
-hi StatusLineNC ctermfg=239 ctermbg=NONE cterm=NONE
+hi StatusLine               ctermfg=239 ctermbg=NONE cterm=NONE
+hi StatusLineNC             ctermfg=239 ctermbg=NONE cterm=NONE
 
-hi Pmenu ctermfg=magenta ctermbg=234 cterm=NONE
-hi PmenuSel ctermfg=magenta ctermbg=232 cterm=NONE
-hi PmenuSbar ctermbg=233 cterm=NONE
-hi PmenuThumb ctermbg=magenta cterm=NONE
+hi Pmenu                    ctermfg=magenta ctermbg=234 cterm=NONE
+hi PmenuSel                 ctermfg=magenta ctermbg=232 cterm=NONE
+hi PmenuSbar                ctermbg=233 cterm=NONE
+hi PmenuThumb               ctermbg=magenta cterm=NONE
 
-hi VertSplit ctermfg=234 ctermbg=234 cterm=NONE
+hi VertSplit                ctermfg=234 ctermbg=234 cterm=NONE
 
-hi ErrorMsg ctermbg=NONE ctermfg=darkred cterm=NONE
-hi Error ctermbg=NONE ctermfg=darkred cterm=NONE
+hi ErrorMsg                 ctermbg=NONE ctermfg=darkred cterm=NONE
+hi Error                    ctermbg=NONE ctermfg=darkred cterm=NONE
 
-hi Search ctermbg=233 ctermfg=darkred
-hi IncSearch ctermbg=233 cterm=NONE ctermfg=darkred
+hi Search                   ctermbg=233 ctermfg=darkred
+hi IncSearch                ctermbg=233 cterm=NONE ctermfg=darkred
 
-hi vimGlobal ctermfg=black ctermbg=NONE
-hi vimTodo ctermbg=233 ctermfg=darkred
-hi Todo ctermbg=233 ctermfg=darkred
+hi vimGlobal                ctermfg=black ctermbg=NONE
+hi vimTodo                  ctermbg=233 ctermfg=darkred
+hi Todo                     ctermbg=233 ctermfg=darkred
 
-hi Special ctermfg=cyan
-hi SpecialKey ctermfg=black ctermbg=NONE
-hi Visual ctermfg=NONE ctermbg=237 cterm=NONE
-hi ModeMsg ctermfg=black cterm=NONE ctermbg=NONE
-hi MoreMsg ctermfg=black ctermbg=NONE
-hi NonText ctermfg=black ctermbg=NONE
-hi SpellBad ctermbg=234 ctermfg=NONE cterm=NONE
-hi SpellRare ctermbg=NONE ctermfg=darkred cterm=NONE
-hi MatchParen ctermbg=235 ctermfg=darkred
-hi Comment ctermfg=239 ctermbg=NONE cterm=NONE
-hi CursorLine ctermfg=NONE ctermbg=234 cterm=NONE
+hi Special                  ctermfg=cyan
+hi SpecialKey               ctermfg=black ctermbg=NONE
+hi Visual                   ctermfg=NONE ctermbg=237 cterm=NONE
+hi ModeMsg                  ctermfg=black cterm=NONE ctermbg=NONE
+hi MoreMsg                  ctermfg=black ctermbg=NONE
+hi NonText                  ctermfg=black ctermbg=NONE
+hi SpellBad                 ctermbg=234 ctermfg=NONE cterm=NONE
+hi SpellRare                ctermbg=NONE ctermfg=darkred cterm=NONE
+hi MatchParen               ctermbg=235 ctermfg=darkred
+hi Comment                  ctermfg=239 ctermbg=NONE cterm=NONE
+hi CursorLine               ctermfg=NONE ctermbg=234 cterm=NONE
 
-hi TroubleInformation ctermbg=NONE ctermfg=yellow cterm=NONE
-hi DiagnosticInfo ctermbg=NONE ctermfg=yellow cterm=NONE
+hi TroubleInformation       ctermbg=NONE ctermfg=yellow cterm=NONE
+hi DiagnosticInfo           ctermbg=NONE ctermfg=yellow cterm=NONE
 
-hi TelescopeBorder ctermbg=NONE ctermfg=yellow cterm=NONE
-hi TelescopeSelection ctermbg=234 ctermfg=black cterm=NONE
+hi TelescopeBorder          ctermbg=233 ctermfg=233 cterm=NONE
+hi TelescopeSelection       ctermbg=233 ctermfg=black cterm=NONE
 
-hi CocErrorSign ctermbg=NONE ctermfg=darkred cterm=NONE
-hi CocWarningSign ctermbg=NONE ctermfg=yellow cterm=NONE
-hi CocFloating ctermbg=234 guifg=234 cterm=NONE
+hi CocErrorSign             ctermbg=NONE ctermfg=darkred cterm=NONE
+hi CocWarningSign           ctermbg=NONE ctermfg=yellow cterm=NONE
+hi CocFloating              ctermbg=234 guifg=234 cterm=NONE
 hi CocNotificationProgress  ctermfg=darkyellow cterm=NONE
-hi CocHitFloat ctermbg=NONE guifg=234 cterm=NONE
-hi CocListSearch ctermbg=NONE guifg=234 cterm=NONE
-hi CocInlayHint ctermbg=NONE guifg=234 cterm=NONE
-hi CocListFgBlue ctermbg=NONE guifg=234 cterm=NONE
-hi CocMenuSel ctermfg=magenta ctermbg=232 cterm=NONE
-hi CocErrorHighlight ctermfg=1 ctermbg=234 cterm=UNDERLINE
-hi CocWarningHighlight ctermfg=yellow ctermbg=234 cterm=UNDERLINE
-hi CocUnusedHighlight ctermfg=NONE ctermbg=234 cterm=NONE
-hi CocPumSearch ctermfg=4 ctermbg=NONE cterm=NONE
+hi CocHitFloat              ctermbg=NONE guifg=234 cterm=NONE
+hi CocListSearch            ctermbg=NONE guifg=234 cterm=NONE
+hi CocInlayHint             ctermbg=NONE guifg=234 cterm=NONE
+hi CocListFgBlue            ctermbg=NONE guifg=234 cterm=NONE
+hi CocMenuSel               ctermfg=magenta ctermbg=232 cterm=NONE
+hi CocErrorHighlight        ctermfg=1 ctermbg=234 cterm=UNDERLINE
+hi CocWarningHighlight      ctermfg=yellow ctermbg=234 cterm=UNDERLINE
+hi CocUnusedHighlight       ctermfg=NONE ctermbg=234 cterm=NONE
+hi CocPumSearch             ctermfg=4 ctermbg=NONE cterm=NONE
 
-au FileType * hi StatusLine ctermfg=black ctermbg=NONE
-au FileType * hi StatusLineNC ctermfg=black ctermbg=NONE
-au FileType * hi Normal ctermbg=NONE
-au FileType * hi Special ctermfg=cyan
-au FileType * hi LineNr ctermfg=black ctermbg=NONE
-au FileType * hi SpecialKey ctermfg=black ctermbg=NONE
-au FileType * hi ModeMsg ctermfg=black cterm=NONE ctermbg=NONE
-au FileType * hi MoreMsg ctermfg=black ctermbg=NONE
-au FileType * hi NonText ctermfg=black ctermbg=NONE
-au FileType * hi vimGlobal ctermfg=black ctermbg=NONE
-au FileType * hi goComment ctermfg=black ctermbg=NONE
-au FileType * hi ErrorMsg ctermbg=234 ctermfg=darkred cterm=NONE
-au FileType * hi Error ctermbg=234 ctermfg=darkred cterm=NONE
-au FileType * hi SpellBad ctermbg=234 ctermfg=darkred cterm=NONE
-au FileType * hi SpellRare ctermbg=234 ctermfg=darkred cterm=NONE
-au FileType * hi Search ctermbg=236 ctermfg=darkred
-au FileType * hi vimTodo ctermbg=236 ctermfg=darkred
-au FileType * hi Todo ctermbg=236 ctermfg=darkred
-au FileType * hi IncSearch ctermbg=236 cterm=NONE ctermfg=darkred
-au FileType * hi MatchParen ctermbg=235 ctermfg=darkred
-au FileType markdown,pandoc hi Title ctermfg=yellow ctermbg=NONE
-au FileType markdown,pandoc hi Operator ctermfg=yellow ctermbg=NONE
-au FileType yaml hi yamlBlockMappingKey ctermfg=NONE
-au FileType yaml set sw=4
-au FileType bash set sw=2
-au FileType c set sw=8
-
-"===========Mapping=============
-
-map <C-q> :q!<CR>
 map <C-s> :w!<CR>
 nmap ss :split<Return><C-w>w
 nmap sv :vsplit<Return><C-w>w
@@ -188,7 +158,6 @@ nnoremap <leader>ff :Telescope find_files<CR>
 map <F1> :set number!<CR>
 nnoremap <F2> :NERDTreeToggle<CR>
 nnoremap <F3> :Autoformat<CR>
-nnoremap <F4> :RainbowToggle<CR>
 map <F12> :set list!<CR>
 
 " ============================
@@ -253,14 +222,47 @@ if has("nvim")
   " This plugin adds Go language support for Vim.
   Plug 'fatih/vim-go', {'do': ':GoInstallBinaries'}
 
-  Plug 'frazrepo/vim-rainbow'
+  Plug 'preservim/nerdcommenter'
+
+  Plug 'airblade/vim-gitgutter'
 endif
 call plug#end()
 
+" Create default mappings
+let g:NERDCreateDefaultMappings = 1
+" Add spaces after comment delimiters by default
+let g:NERDSpaceDelims = 1
+" Use compact syntax for prettified multi-line comments
+let g:NERDCompactSexyComs = 1
+" Align line-wise comment delimiters flush left instead of following code indentation
+let g:NERDDefaultAlign = 'left'
+" Set a language to use its alternate delimiters by default
+let g:NERDAltDelims_java = 1
+" Add your own custom formats or override the defaults
+let g:NERDCustomDelimiters = { 'c': { 'left': '/**','right': '*/' } }
+" Allow commenting and inverting empty lines (useful when commenting a region)
+let g:NERDCommentEmptyLines = 1
+" Enable trimming of trailing whitespace when uncommenting
+let g:NERDTrimTrailingWhitespace = 1
+" Enable NERDCommenterToggle to check all selected lines is commented or not
+let g:NERDToggleCheckAllLines = 1
 
-" ============================
-" vim-plug: Vim plugin manager
-" ============================
+let g:go_fmt_fail_silently = 0
+let g:go_fmt_command = 'goimports'
+let g:go_fmt_autosave = 0
+let g:go_gopls_enabled = 1
+let g:go_auto_sameids = 0
+let g:go_highlight_types = 1
+let g:go_highlight_fields = 1
+let g:go_highlight_functions = 1
+let g:go_highlight_function_calls = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_extra_types = 1
+let g:go_highlight_variable_declarations = 1
+let g:go_highlight_variable_assignments = 1
+let g:go_highlight_build_constraints = 1
+let g:go_highlight_diagnostic_errors = 0
+let g:go_highlight_diagnostic_warnings = 0
 
 inoremap <silent><expr> <TAB>
       \ coc#pum#visible() ? coc#pum#next(1):
@@ -333,10 +335,6 @@ let g:coc_global_extensions=[
       \'coc-dash-complete',
       \]
 
-" ============================
-" vim-plug: Vim plugin manager
-" ============================
-
 lua << EOF
 local actions = require('telescope.actions')
 
@@ -348,10 +346,10 @@ require('telescope').setup {
       preview_cutoff = 120,
       horizontal = {mirror = false},
       vertical = {mirror = false}
-      },
+    },
     find_command = {
       'rg', '--no-heading', '--with-filename', '--line-number', '--column', '--smart-case'
-      },
+    },
     prompt_prefix = " ",
     selection_caret = "> ",
     entry_prefix = "  ",
@@ -374,22 +372,18 @@ require('telescope').setup {
     qflist_previewer = require'telescope.previewers'.vim_buffer_qflist.new,
     buffer_previewer_maker = require'telescope.previewers'.buffer_previewer_maker,
     },
-  pickers = {
-    find_files = {
-      theme = "dropdown",
+    pickers = {
+      find_files = {
+        theme = "dropdown",
       }
-    },
-  mappings = {
-    i = {
-      ["<esc>"] = actions.close,
+      },
+    mappings = {
+      i = {
+        ["<esc>"] = actions.close,
+      }
       }
     }
-  }
 EOF
-
-" ============================
-" vim-plug: Vim plugin manager
-" ============================
 
 lua << EOF
 require("flutter-tools").setup {
@@ -397,78 +391,42 @@ require("flutter-tools").setup {
     border = "rounded",
     notification_style = 'native' ,
     },
-  closing_tags = {
-    highlight = "ErrorMsg",
-    prefix = " ",
-    enabled = false
-    },
-  dev_tools = {
-    autostart = false,
-    auto_open_browser = false,
-    },
-  dev_log = {
-    enabled = true,
-    open_cmd = "tabedit",
-    },
-  settings = {
-    showTodos = true,
-    completeFunctionCalls = true,
-    analysisExcludedFolders = {"<path-to-flutter-sdk-packages>"},
-    renameFilesWithClasses = "prompt",
-    enableSnippets = true,
-    },
-  lsp = {
-    color = {
-      enabled = false,
-      background = false,
-      foreground = false,
-      virtual_text = false,
-      virtual_text_str = "",
+    closing_tags = {
+      highlight = "ErrorMsg",
+      prefix = " ",
+      enabled = false
+      },
+    dev_tools = {
+      autostart = false,
+      auto_open_browser = false,
+      },
+    dev_log = {
+      enabled = true,
+      open_cmd = "tabedit",
       },
     settings = {
-      showTodos = false,
+      showTodos = true,
       completeFunctionCalls = true,
       analysisExcludedFolders = {"<path-to-flutter-sdk-packages>"},
       renameFilesWithClasses = "prompt",
       enableSnippets = true,
+      },
+    lsp = {
+      color = {
+        enabled = false,
+        background = false,
+        foreground = false,
+        virtual_text = false,
+        virtual_text_str = "",
+      },
+      settings = {
+        showTodos = false,
+        completeFunctionCalls = true,
+        analysisExcludedFolders = {"<path-to-flutter-sdk-packages>"},
+        renameFilesWithClasses = "prompt",
+        enableSnippets = true,
+      }
       }
     }
-  }
 EOF
 
-" ============================
-" vim-plug: Vim plugin manager
-" ============================
-
-let g:go_fmt_fail_silently = 0
-let g:go_fmt_command = 'goimports'
-let g:go_fmt_autosave = 0
-let g:go_gopls_enabled = 1
-let g:go_auto_sameids = 0
-let g:go_highlight_types = 1
-let g:go_highlight_fields = 1
-let g:go_highlight_functions = 1
-let g:go_highlight_function_calls = 1
-let g:go_highlight_operators = 1
-let g:go_highlight_extra_types = 1
-let g:go_highlight_variable_declarations = 1
-let g:go_highlight_variable_assignments = 1
-let g:go_highlight_build_constraints = 1
-let g:go_highlight_diagnostic_errors = 0
-let g:go_highlight_diagnostic_warnings = 0
-
-" ============================
-" vim-plug: Vim plugin manager
-" ============================
-
-let g:rainbow_active = 0
-
-let g:rainbow_load_separately = [
-      \ [ '*' , [['(', ')'], ['\[', '\]'], ['{', '}']] ],
-      \ [ '*.tex' , [['(', ')'], ['\[', '\]']] ],
-      \ [ '*.cpp' , [['(', ')'], ['\[', '\]'], ['{', '}']] ],
-      \ [ '*.{html,htm}' , [['(', ')'], ['\[', '\]'], ['{', '}'], ['<\a[^>]*>', '</[^>]*>']] ],
-      \ ]
-
-let g:rainbow_guifgs = ['RoyalBlue3', 'DarkOrange3', 'DarkOrchid3', 'FireBrick']
-let g:rainbow_ctermfgs = ['lightblue', 'lightgreen', 'yellow', 'red', 'magenta']
