@@ -94,17 +94,22 @@ endif
 hi Normal                   guibg=bg
 
 hi Function                 ctermbg=NONE ctermfg=lightblue cterm=NONE
-hi Identifier               ctermbg=NONE ctermfg=yellow cterm=NONE
+hi StorageClass             ctermbg=NONE ctermfg=lightblue cterm=NONE
+hi Identifier               ctermbg=NONE ctermfg=lightgreen cterm=NONE
 hi Statement                ctermbg=NONE ctermfg=yellow cterm=NONE
 hi Comment                  ctermbg=NONE ctermfg=234 cterm=NONE
 hi Type                     ctermbg=NONE ctermfg=lightgreen cterm=NONE
 hi PreProc                  ctermbg=NONE ctermfg=lightblue cterm=NONE
 hi Constant                 ctermbg=NONE ctermfg=yellow cterm=NONE
-hi String                   ctermbg=NONE ctermfg=lightmagenta cterm=NONE
-
+hi String                   ctermbg=NONE ctermfg=magenta cterm=NONE
+hi Number                   ctermbg=NONE ctermfg=magenta cterm=NONE
+hi Boolean                  ctermbg=NONE ctermfg=darkred cterm=NONE
+hi Character                ctermbg=NONE ctermfg=darkmagenta cterm=NONE
+hi Define                   ctermbg=NONE ctermfg=lightmagenta cterm=NONE
+hi Macro                    ctermbg=NONE ctermfg=lightmagenta cterm=NONE
+hi Structure                ctermbg=NONE ctermfg=lightgreen cterm=NONE
 
 hi TermCursorNC             ctermbg=233 cterm=NONE
-hi Cursor                   ctermbg=red
 
 hi NormalFloat              ctermbg=NONE ctermfg=239 cterm=NONE
 hi EndOfBuffer              ctermbg=NONE ctermfg=235 cterm=NONE
@@ -134,7 +139,7 @@ hi Todo                     ctermbg=233 ctermfg=darkred cterm=NONE
 
 hi Special                  ctermbg=NONE ctermfg=cyan cterm=NONE
 hi SpecialKey               ctermbg=NONE ctermfg=black cterm=NONE
-hi Visual                   ctermbg=235 ctermfg=NONE cterm=NONE
+hi Visual                   ctermbg=236 ctermfg=NONE cterm=NONE
 hi ModeMsg                  ctermbg=NONE ctermfg=black cterm=NONE
 hi MoreMsg                  ctermbg=NONE ctermfg=black cterm=NONE
 hi NonText                  ctermbg=NONE ctermfg=black cterm=NONE
@@ -155,18 +160,19 @@ hi TelescopeSelection       ctermbg=233 ctermfg=black cterm=NONE
 hi CocErrorSign             ctermbg=NONE ctermfg=darkred cterm=NONE
 hi CocWarningSign           ctermbg=NONE ctermfg=yellow cterm=NONE
 hi CocFloating              ctermbg=233 cterm=NONE
-hi CocNotificationProgress  ctermbg=233 ctermfg=darkyellow cterm=NONE
-hi CocHitFloat              ctermbg=233 guifg=234 cterm=NONE
-hi CocListSearch            ctermbg=233 guifg=234 cterm=NONE
-hi CocInlayHint             ctermbg=233 guifg=234 cterm=NONE
-hi CocListFgBlue            ctermbg=233 guifg=234 cterm=NONE
-hi CocMenuSel               ctermbg=233 ctermfg=magenta cterm=NONE
-hi CocErrorHighlight        ctermbg=233 ctermfg=darkred cterm=UNDERLINE
-hi CocWarningHighlight      ctermbg=233 ctermfg=yellow cterm=UNDERLINE
-hi CocUnusedHighlight       ctermbg=233 ctermfg=darkred cterm=NONE
-hi CocPumSearch             ctermbg=233 ctermfg=4 cterm=NONE
+hi CocNotificationProgress  ctermbg=red ctermfg=darkyellow cterm=NONE
+hi CocHitFloat              ctermbg=red guifg=234 cterm=NONE
+hi CocListSearch            ctermbg=red guifg=234 cterm=NONE
+hi CocInlayHint             ctermbg=NONE ctermfg=233 cterm=NONE
+hi CocListFgBlue            ctermbg=233 guifg=red cterm=NONE
+hi CocMenuSel               ctermbg=232 ctermfg=magenta cterm=NONE
+hi CocErrorHighlight        ctermbg=NONE ctermfg=darkred cterm=UNDERLINE
+hi CocWarningHighlight      ctermbg=NONE ctermfg=yellow cterm=UNDERLINE
+hi CocUnusedHighlight       ctermbg=NONE ctermfg=darkred cterm=NONE
+hi CocPumSearch             ctermbg=NONE ctermfg=4 cterm=NONE
 
 map <C-s> :w!<CR>
+map <C-q> :q!<CR>
 nmap ss :split<Return><C-w>w
 nmap sv :vsplit<Return><C-w>w
 nnoremap <leader>ff :Telescope find_files<CR>
