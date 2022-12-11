@@ -93,6 +93,16 @@ endif
 
 hi Normal                   guibg=bg
 
+hi Function                 ctermbg=NONE ctermfg=lightblue cterm=NONE
+hi Identifier               ctermbg=NONE ctermfg=yellow cterm=NONE
+hi Statement                ctermbg=NONE ctermfg=yellow cterm=NONE
+hi Comment                  ctermbg=NONE ctermfg=234 cterm=NONE
+hi Type                     ctermbg=NONE ctermfg=lightgreen cterm=NONE
+hi PreProc                  ctermbg=NONE ctermfg=lightblue cterm=NONE
+hi Constant                 ctermbg=NONE ctermfg=yellow cterm=NONE
+hi String                   ctermbg=NONE ctermfg=lightmagenta cterm=NONE
+
+
 hi TermCursorNC             ctermbg=233 cterm=NONE
 hi Cursor                   ctermbg=red
 
@@ -124,14 +134,13 @@ hi Todo                     ctermbg=233 ctermfg=darkred cterm=NONE
 
 hi Special                  ctermbg=NONE ctermfg=cyan cterm=NONE
 hi SpecialKey               ctermbg=NONE ctermfg=black cterm=NONE
-hi Visual                   ctermbg=237 ctermfg=NONE cterm=NONE
+hi Visual                   ctermbg=235 ctermfg=NONE cterm=NONE
 hi ModeMsg                  ctermbg=NONE ctermfg=black cterm=NONE
 hi MoreMsg                  ctermbg=NONE ctermfg=black cterm=NONE
 hi NonText                  ctermbg=NONE ctermfg=black cterm=NONE
 hi SpellBad                 ctermbg=NONE ctermfg=NONE cterm=NONE
 hi SpellRare                ctermbg=NONE ctermfg=darkred cterm=NONE
 hi MatchParen               ctermbg=NONE ctermfg=darkred cterm=NONE
-hi Comment                  ctermbg=NONE ctermfg=239 cterm=NONE
 hi CursorLine               ctermbg=234 ctermfg=NONE cterm=NONE
 
 hi DiffChange               ctermbg=233 ctermfg=NONE cterm=NONE
@@ -329,43 +338,43 @@ require('telescope').setup {
       preview_cutoff = 120,
       horizontal = {mirror = false},
       vertical = {mirror = false}
-      },
-      find_command = {
-        'rg', '--no-heading', '--with-filename', '--line-number', '--column', '--smart-case'
-        },
-        prompt_prefix = " ",
-        selection_caret = "> ",
-        entry_prefix = "  ",
-        initial_mode = "insert",
-        selection_strategy = "reset",
-        sorting_strategy = "descending",
-        layout_strategy = "horizontal",
-        file_sorter = require'telescope.sorters'.get_fuzzy_file,
-        file_ignore_patterns = {},
-        generic_sorter = require'telescope.sorters'.get_generic_fuzzy_sorter,
-        path_display = {},
-        winblend = 0,
-        border = {},
-        borderchars = {'─', '│', '─', '│', '╭', '╮', '╯', '╰'},
-        color_devicons = true,
-        use_less = true,
-        set_env = {['COLORTERM'] = 'truecolor'},
-        file_previewer = require'telescope.previewers'.vim_buffer_cat.new,
-        grep_previewer = require'telescope.previewers'.vim_buffer_vimgrep.new,
-        qflist_previewer = require'telescope.previewers'.vim_buffer_qflist.new,
-        buffer_previewer_maker = require'telescope.previewers'.buffer_previewer_maker,
-        },
-        pickers = {
-          find_files = {
-            theme = "dropdown",
-          }
-          },
-          mappings = {
-            i = {
-              ["<esc>"] = actions.close,
-            }
-            }
-          }
+    },
+    find_command = {
+      'rg', '--no-heading', '--with-filename', '--line-number', '--column', '--smart-case'
+    },
+    prompt_prefix = " ",
+    selection_caret = "> ",
+    entry_prefix = "  ",
+    initial_mode = "insert",
+    selection_strategy = "reset",
+    sorting_strategy = "descending",
+    layout_strategy = "horizontal",
+    file_sorter = require'telescope.sorters'.get_fuzzy_file,
+    file_ignore_patterns = {},
+    generic_sorter = require'telescope.sorters'.get_generic_fuzzy_sorter,
+    path_display = {},
+    winblend = 0,
+    border = {},
+    borderchars = {'─', '│', '─', '│', '╭', '╮', '╯', '╰'},
+    color_devicons = true,
+    use_less = true,
+    set_env = {['COLORTERM'] = 'truecolor'},
+    file_previewer = require'telescope.previewers'.vim_buffer_cat.new,
+    grep_previewer = require'telescope.previewers'.vim_buffer_vimgrep.new,
+    qflist_previewer = require'telescope.previewers'.vim_buffer_qflist.new,
+    buffer_previewer_maker = require'telescope.previewers'.buffer_previewer_maker,
+  },
+  pickers = {
+    find_files = {
+      theme = "dropdown",
+    }
+    },
+  mappings = {
+    i = {
+      ["<esc>"] = actions.close,
+    }
+    }
+  }
 EOF
 
 lua << EOF
@@ -373,43 +382,43 @@ require("flutter-tools").setup {
   ui = {
     border = "rounded",
     notification_style = 'native' ,
+  },
+  closing_tags = {
+    highlight = "ErrorMsg",
+    prefix = " ",
+    enabled = false
+  },
+  dev_tools = {
+    autostart = false,
+    auto_open_browser = false,
+  },
+  dev_log = {
+    enabled = true,
+    open_cmd = "tabedit",
+  },
+  settings = {
+    showTodos = true,
+    completeFunctionCalls = true,
+    analysisExcludedFolders = {"<path-to-flutter-sdk-packages>"},
+    renameFilesWithClasses = "prompt",
+    enableSnippets = true,
+  },
+  lsp = {
+    color = {
+      enabled = false,
+      background = false,
+      foreground = false,
+      virtual_text = false,
+      virtual_text_str = "",
     },
-    closing_tags = {
-      highlight = "ErrorMsg",
-      prefix = " ",
-      enabled = false
-      },
-      dev_tools = {
-        autostart = false,
-        auto_open_browser = false,
-        },
-        dev_log = {
-          enabled = true,
-          open_cmd = "tabedit",
-          },
-          settings = {
-            showTodos = true,
-            completeFunctionCalls = true,
-            analysisExcludedFolders = {"<path-to-flutter-sdk-packages>"},
-            renameFilesWithClasses = "prompt",
-            enableSnippets = true,
-            },
-            lsp = {
-              color = {
-                enabled = false,
-                background = false,
-                foreground = false,
-                virtual_text = false,
-                virtual_text_str = "",
-                },
-                settings = {
-                  showTodos = false,
-                  completeFunctionCalls = true,
-                  analysisExcludedFolders = {"<path-to-flutter-sdk-packages>"},
-                  renameFilesWithClasses = "prompt",
-                  enableSnippets = true,
-                  }
-                }
-            }
+    settings = {
+      showTodos = false,
+      completeFunctionCalls = true,
+      analysisExcludedFolders = {"<path-to-flutter-sdk-packages>"},
+      renameFilesWithClasses = "prompt",
+      enableSnippets = true,
+    }
+    }
+  }
 EOF
 
