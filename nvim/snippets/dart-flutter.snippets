@@ -1,12 +1,12 @@
 snippet stFullW "Create a `Stateful` Widget"
 	class ${0:name} extends StatefulWidget {
-	  $1({Key? key}) : super(key: key);
+	  const ${0:name}({Key? key}) : super(key: key);
 	
 	  @override
 	  State<${0:name}> createState() => _${0:name}State();
 	}
 
-	class _${0:name} extends State<$1> {
+	class _${0:name} extends State<${0:name}> {
 	  @override
 	  Widget build(BuildContext context) {
 	    return Container();

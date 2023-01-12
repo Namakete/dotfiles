@@ -19,7 +19,7 @@ set nonumber
 set norelativenumber
 " Turn column and row position on in bottom right.
 set ruler
-set ruf=%30(%=%#LineNr#%.50F\ [%{strlen(&ft)?&ft:'none'}]\ %l:%c\ %p%%%)
+set ruf=%12([%{strlen(&ft)?&ft:'none'}]\ %l:%c\ %)
 " Show command and insert mode.
 set showmode
 " TODO: Add comment
@@ -97,13 +97,13 @@ hi Function                 ctermbg=NONE ctermfg=lightblue cterm=NONE
 hi StorageClass             ctermbg=NONE ctermfg=lightblue cterm=NONE
 hi Identifier               ctermbg=NONE ctermfg=lightgreen cterm=NONE
 hi Statement                ctermbg=NONE ctermfg=yellow cterm=NONE
-hi Comment                  ctermbg=NONE ctermfg=234 cterm=NONE
+hi Comment                  ctermbg=NONE ctermfg=green cterm=NONE
 hi Type                     ctermbg=NONE ctermfg=lightgreen cterm=NONE
 hi PreProc                  ctermbg=NONE ctermfg=lightblue cterm=NONE
 hi Constant                 ctermbg=NONE ctermfg=yellow cterm=NONE
 hi String                   ctermbg=NONE ctermfg=magenta cterm=NONE
 hi Number                   ctermbg=NONE ctermfg=magenta cterm=NONE
-hi Boolean                  ctermbg=NONE ctermfg=darkred cterm=NONE
+hi Boolean                  ctermbg=NONE ctermfg=darkblue cterm=NONE
 hi Character                ctermbg=NONE ctermfg=darkmagenta cterm=NONE
 hi Define                   ctermbg=NONE ctermfg=lightmagenta cterm=NONE
 hi Macro                    ctermbg=NONE ctermfg=lightmagenta cterm=NONE
@@ -115,17 +115,19 @@ hi NormalFloat              ctermbg=NONE ctermfg=239 cterm=NONE
 hi EndOfBuffer              ctermbg=NONE ctermfg=235 cterm=NONE
 
 hi LineNr                   ctermbg=NONE ctermfg=235 cterm=NONE
+hi LineNrAbove              ctermbg=233 ctermfg=235 cterm=NONE
+hi LineNrBelow              ctermbg=233 ctermfg=1 cterm=NONE
 hi SignColumn               ctermbg=NONE ctermfg=239 cterm=NONE
 
-hi StatusLine               ctermbg=NONE ctermfg=239 cterm=NONE
-hi StatusLineNC             ctermbg=NONE ctermfg=239 cterm=NONE
+hi StatusLine               ctermbg=233 ctermfg=239 cterm=NONE
+hi StatusLineNC             ctermbg=233 ctermfg=239 cterm=NONE
 
-hi Pmenu                    ctermbg=233 ctermfg=magenta cterm=NONE
+hi Pmenu                    ctermbg=233 ctermfg=lightblue cterm=NONE
 hi PmenuSel                 ctermbg=232 ctermfg=magenta cterm=NONE
 hi PmenuSbar                ctermbg=233 ctermfg=NONE cterm=NONE
 hi PmenuThumb               ctermbg=magenta ctermfg=NONE cterm=NONE
 
-hi VertSplit                ctermbg=234 ctermfg=234 cterm=NONE
+hi VertSplit                ctermbg=NONE ctermfg=magenta cterm=NONE
 
 hi ErrorMsg                 ctermbg=NONE ctermfg=darkred cterm=NONE
 hi Error                    ctermbg=NONE ctermfg=darkred cterm=NONE
@@ -155,7 +157,7 @@ hi TroubleInformation       ctermbg=NONE ctermfg=yellow cterm=NONE
 hi DiagnosticInfo           ctermbg=NONE ctermfg=yellow cterm=NONE
 
 hi TelescopeBorder          ctermbg=233 ctermfg=233 cterm=NONE
-hi TelescopeSelection       ctermbg=233 ctermfg=black cterm=NONE
+hi TelescopeSelection       ctermbg=233 ctermfg=magenta cterm=NONE
 
 hi CocErrorSign             ctermbg=NONE ctermfg=darkred cterm=NONE
 hi CocWarningSign           ctermbg=NONE ctermfg=yellow cterm=NONE
@@ -242,8 +244,15 @@ if has("nvim")
   Plug 'akinsho/flutter-tools.nvim'
   " This plugin adds Go language support for Vim.
   Plug 'fatih/vim-go', {'do': ':GoInstallBinaries'}
+  " Keyword and regex-based syntax highlighting for C and C++11/14/17/20/23 in Vim.
+  Plug 'bfrg/vim-cpp-modern'
 endif
 call plug#end()
+
+let g:cpp_function_highlight = 1
+let g:cpp_attributes_highlight = 1
+let g:cpp_member_highlight = 1
+let g:cpp_simple_highlight = 1
 
 let g:go_fmt_fail_silently = 0
 let g:go_fmt_command = 'goimports'
@@ -314,8 +323,8 @@ autocmd CursorHold * silent call CocActionAsync('highlight')
 
 let g:coc_global_extensions=[
       \'coc-css',
-      \'coc-flutter',
       \'coc-json',
+      \'coc-flutter',
       \'coc-tsserver',
       \'coc-pyright',
       \'coc-clangd',
@@ -399,32 +408,25 @@ require("flutter-tools").setup {
     auto_open_browser = false,
   },
   dev_log = {
-    enabled = true,
+    enabled = false,
     open_cmd = "tabedit",
   },
-  settings = {
-    showTodos = true,
-    completeFunctionCalls = true,
-    analysisExcludedFolders = {"<path-to-flutter-sdk-packages>"},
-    renameFilesWithClasses = "prompt",
-    enableSnippets = true,
-  },
   lsp = {
-    color = {
-      enabled = false,
-      background = false,
-      foreground = false,
-      virtual_text = false,
-      virtual_text_str = "",
+    color = { -- show the derived colours for dart variables
+      enabled = false, -- whether or not to highlight color variables at all, only supported on flutter >= 2.10
+      background = false, -- highlight the background
+      foreground = false, -- highlight the foreground
+      virtual_text = true, -- show the highlight using virtual text
+      virtual_text_str = "*", -- the virtual text character to highlight
     },
     settings = {
-      showTodos = false,
+      showTodos = true,
       completeFunctionCalls = true,
       analysisExcludedFolders = {"<path-to-flutter-sdk-packages>"},
-      renameFilesWithClasses = "prompt",
+      renameFilesWithClasses = "prompt", -- "always"
       enableSnippets = true,
     }
-    }
   }
+}
 EOF
 

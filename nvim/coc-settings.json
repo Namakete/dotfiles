@@ -1,17 +1,21 @@
 {
-    "diagnostic.enable": true,
-    "diagnostic.errorSign": ">> ",
-    "diagnostic.warningSign": ">> ",
-    "diagnostic.infoSign": ">? ",
-    "diagnostic.hintSign": ">! ",
-    "diagnostic.enableMessage": "always",
-    "clangd.path": "~/.config/coc/extensions/coc-clangd-data/install/15.0.3/clangd_15.0.3/bin/clangd",
-    "snippets.userSnippetsDirectory": "~/.config/nvim/snippets",
-    "languageserver": {
-        "fortran": {
-            "command": "fortls",
-            "filetypes": ["fortran"],
-            "rootPatterns": [".fortls", ".git/"]
-        }
+  "diagnostic.enable": true,
+  "diagnostic.errorSign": ">> ",
+  "diagnostic.warningSign": ">> ",
+  "diagnostic.infoSign": ">? ",
+  "diagnostic.hintSign": ">! ",
+  "diagnostic.enableMessage": "always",
+  "flutter.lsp.initialization.closingLabels": false,
+  "clangd.path": "~/.config/coc/extensions/coc-clangd-data/install/15.0.3/clangd_15.0.3/bin/clangd",
+  "snippets.userSnippetsDirectory": "~/.config/nvim/snippets",
+  "languageserver": {
+    "fortran": {
+      "command": "fortls",
+      "filetypes": ["fortran"],
+      "rootPatterns": [".fortls", ".git/"]
     }
+  },
+  "coc.preferences.formatOnSaveFiletypes": [
+    "dart"
+  ],
 }
