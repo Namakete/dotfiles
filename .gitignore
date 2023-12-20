@@ -1,13 +1,5 @@
-.DS_Store
-
-coc/
-yarn/
+btop/
 flutter/
-configstore/
 iterm2/
-kitty/
-mc/
-neofetch/
-htop/
-lazygit/
 
+.DS_Store
