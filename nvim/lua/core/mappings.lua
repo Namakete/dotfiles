@@ -214,12 +214,7 @@ M.lspconfig = {
       "Goto next",
     },
 
-    ["<leader>q"] = {
-      function()
-        vim.diagnostic.setloclist()
-      end,
-      "Diagnostic setloclist",
-    },
+    ["<leader>q"] = { ":TroubleToggle<CR>", "Diagnostic setloclist" },
 
     ["<leader>wa"] = {
       function()
