@@ -285,6 +285,17 @@ local default_plugins = {
       require("trouble").setup()
     end,
   },
+  {
+    "kdheepak/lazygit.nvim",
+    dependencies = {
+      "nvim-telescope/telescope.nvim",
+      "nvim-lua/plenary.nvim",
+    },
+    cmd = {"LazyGit"},
+    config = function()
+      require("telescope").load_extension("lazygit")
+    end,
+  },
 }
 
 local config = require("core.utils").load_config()

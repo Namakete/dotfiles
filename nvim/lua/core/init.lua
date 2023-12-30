@@ -32,6 +32,10 @@ opt.number = true
 opt.numberwidth = 2
 opt.ruler = false
 
+-- Backup & Swaps
+opt.backup = false
+opt.swapfile = false
+
 -- disable nvim intro
 opt.shortmess:append "sI"
 
