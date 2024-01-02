@@ -1,4 +1,5 @@
 -- n, v, i, t = mode names
+
 local M = {}
 
 M.general = {
@@ -36,50 +37,18 @@ M.general = {
     -- http://www.reddit.com/r/vim/comments/2k4cbr/problem_with_gj_and_gk/
     -- empty mode is same as using <cmd> :map
     -- also don't use g[j|k] when in operator pending mode, so it doesn't alter d, y or c behaviour
-    ["j"] = {
-      'v:count || mode(1)[0:1] == "no" ? "j" : "gj"',
-      "Move down",
-      opts = {
-        expr = true,
-      },
-    },
-    ["k"] = {
-      'v:count || mode(1)[0:1] == "no" ? "k" : "gk"',
-      "Move up",
-      opts = {
-        expr = true,
-      },
-    },
-    ["<Up>"] = {
-      'v:count || mode(1)[0:1] == "no" ? "k" : "gk"',
-      "Move up",
-      opts = {
-        expr = true,
-      },
-    },
-    ["<Down>"] = {
-      'v:count || mode(1)[0:1] == "no" ? "j" : "gj"',
-      "Move down",
-      opts = {
-        expr = true,
-      },
-    },
+    ["j"] = { 'v:count || mode(1)[0:1] == "no" ? "j" : "gj"', "Move down", opts = { expr = true } },
+    ["k"] = { 'v:count || mode(1)[0:1] == "no" ? "k" : "gk"', "Move up", opts = { expr = true } },
+    ["<Up>"] = { 'v:count || mode(1)[0:1] == "no" ? "k" : "gk"', "Move up", opts = { expr = true } },
+    ["<Down>"] = { 'v:count || mode(1)[0:1] == "no" ? "j" : "gj"', "Move down", opts = { expr = true } },
 
     -- new buffer
     ["<leader>b"] = { "<cmd> enew <CR>", "New buffer" },
-    ["<CR>c"] = {
-      function()
-        vim.fn["codium#FunctionName"]()
-      end,
-      "Description of the function",
-    },
     ["<leader>ch"] = { "<cmd> NvCheatsheet <CR>", "Mapping cheatsheet" },
 
     ["<leader>fm"] = {
       function()
-        vim.lsp.buf.format {
-          async = true,
-        }
+        vim.lsp.buf.format { async = true }
       end,
       "LSP formatting",
     },
@@ -90,48 +59,18 @@ M.general = {
   },
 
   v = {
-    ["<Up>"] = {
-      'v:count || mode(1)[0:1] == "no" ? "k" : "gk"',
-      "Move up",
-      opts = {
-        expr = true,
-      },
-    },
-    ["<Down>"] = {
-      'v:count || mode(1)[0:1] == "no" ? "j" : "gj"',
-      "Move down",
-      opts = {
-        expr = true,
-      },
-    },
+    ["<Up>"] = { 'v:count || mode(1)[0:1] == "no" ? "k" : "gk"', "Move up", opts = { expr = true } },
+    ["<Down>"] = { 'v:count || mode(1)[0:1] == "no" ? "j" : "gj"', "Move down", opts = { expr = true } },
     ["<"] = { "<gv", "Indent line" },
     [">"] = { ">gv", "Indent line" },
   },
 
   x = {
-    ["j"] = {
-      'v:count || mode(1)[0:1] == "no" ? "j" : "gj"',
-      "Move down",
-      opts = {
-        expr = true,
-      },
-    },
-    ["k"] = {
-      'v:count || mode(1)[0:1] == "no" ? "k" : "gk"',
-      "Move up",
-      opts = {
-        expr = true,
-      },
-    },
+    ["j"] = { 'v:count || mode(1)[0:1] == "no" ? "j" : "gj"', "Move down", opts = { expr = true } },
+    ["k"] = { 'v:count || mode(1)[0:1] == "no" ? "k" : "gk"', "Move up", opts = { expr = true } },
     -- Don't copy the replaced text after pasting in visual mode
     -- https://vim.fandom.com/wiki/Replace_a_word_with_yanked_text#Alternative_mapping_for_paste
-    ["p"] = {
-      'p:let @+=@0<CR>:let @"=@0<CR>',
-      "Dont copy replaced text",
-      opts = {
-        silent = true,
-      },
-    },
+    ["p"] = { 'p:let @+=@0<CR>:let @"=@0<CR>', "Dont copy replaced text", opts = { silent = true } },
   },
 }
 
@@ -256,42 +195,29 @@ M.lspconfig = {
 
     ["<leader>lf"] = {
       function()
-        vim.diagnostic.open_float {
-          border = "rounded",
-        }
+        vim.diagnostic.open_float { border = "rounded" }
       end,
       "Floating diagnostic",
     },
 
-    ["<leader>lg"] = {
-      ":LazyGit<CR>"
-      ,
-      "Lazygit",
-    },
-
     ["[d"] = {
       function()
-        vim.diagnostic.goto_prev {
-          float = {
-            border = "rounded",
-          },
-        }
+        vim.diagnostic.goto_prev { float = { border = "rounded" } }
       end,
       "Goto prev",
     },
 
     ["]d"] = {
       function()
-        vim.diagnostic.goto_next {
-          float = {
-            border = "rounded",
-          },
-        }
+        vim.diagnostic.goto_next { float = { border = "rounded" } }
       end,
       "Goto next",
     },
 
-    ["<leader>q"] = { ":TroubleToggle<CR>", "Diagnostic setloclist" },
+    ["<leader>q"] = {
+      ":TroubleToggle<CR>",
+      "Diagnostic setloclist",
+    },
 
     ["<leader>wa"] = {
       function()
@@ -390,6 +316,45 @@ M.nvterm = {
       "Toggle vertical term",
     },
   },
+
+  n = {
+    -- toggle in normal mode
+    ["<A-i>"] = {
+      function()
+        require("nvterm.terminal").toggle "float"
+      end,
+      "Toggle floating term",
+    },
+
+    ["<A-h>"] = {
+      function()
+        require("nvterm.terminal").toggle "horizontal"
+      end,
+      "Toggle horizontal term",
+    },
+
+    ["<A-v>"] = {
+      function()
+        require("nvterm.terminal").toggle "vertical"
+      end,
+      "Toggle vertical term",
+    },
+
+    -- new
+    ["<leader>h"] = {
+      function()
+        require("nvterm.terminal").new "horizontal"
+      end,
+      "New horizontal term",
+    },
+
+    ["<leader>v"] = {
+      function()
+        require("nvterm.terminal").new "vertical"
+      end,
+      "New vertical term",
+    },
+  },
 }
 
 M.whichkey = {
@@ -428,6 +393,7 @@ M.blankline = {
           vim.cmd [[normal! _]]
         end
       end,
+
       "Jump to current context",
     },
   },
@@ -449,9 +415,7 @@ M.gitsigns = {
         return "<Ignore>"
       end,
       "Jump to next hunk",
-      opts = {
-        expr = true,
-      },
+      opts = { expr = true },
     },
 
     ["[c"] = {
@@ -465,9 +429,7 @@ M.gitsigns = {
         return "<Ignore>"
       end,
       "Jump to prev hunk",
-      opts = {
-        expr = true,
-      },
+      opts = { expr = true },
     },
 
     -- Actions
@@ -490,6 +452,13 @@ M.gitsigns = {
         package.loaded.gitsigns.blame_line()
       end,
       "Blame line",
+    },
+
+    ["<leader>td"] = {
+      function()
+        require("gitsigns").toggle_deleted()
+      end,
+      "Toggle deleted",
     },
   },
 }

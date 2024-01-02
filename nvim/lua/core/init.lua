@@ -27,14 +27,14 @@ opt.ignorecase = true
 opt.smartcase = true
 opt.mouse = "a"
 
+-- Backup & Swaps
+opt.backup = false
+opt.swapfile = false
+
 -- Numbers
 opt.number = true
 opt.numberwidth = 2
 opt.ruler = false
-
--- Backup & Swaps
-opt.backup = false
-opt.swapfile = false
 
 -- disable nvim intro
 opt.shortmess:append "sI"
