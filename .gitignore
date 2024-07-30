@@ -1,7 +1,17 @@
 btop/
 flutter/
 iterm2/
-
+neofetch/
+github-copilot/
+nvim/
+fish/
+alacritty/
+configstore/
+npm/
+oh-my-posh/
+raycast/
+wireshark/
+zed/
 *.o
 \#*#
 *#
@@ -63,10 +73,6 @@ Pods/
 .atom/packages/save-session
 .atom/compile-cache
 .atom/storage
-
-# Fish local config
-.config/fish/config-local.fish
-.config/fish/fish_variables.x86_64
 
 # Karabiner
 .config/karabiner/automatic_backups
