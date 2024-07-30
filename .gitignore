@@ -6,6 +6,7 @@ github-copilot/
 fish/
 alacritty/
 configstore/
+tmux/plugins
 npm/
 oh-my-posh/
 raycast/
