@@ -39,8 +39,6 @@ lspconfig.tsserver.setup {
     "vue",
     "typescriptreact",
     "javascriptreact",
-    "typescript.tsx",
-    "javascript.jsx",
   },
 }
 

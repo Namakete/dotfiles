@@ -31,27 +31,24 @@ return {
         "css",
         "javascript",
         "typescript",
-        "tsx",
-        "jsx",
         "prisma",
 
         -- some languages
         "dart",
         "java",
-        "go",
-        "rust",
         "php",
         "python",
         "json",
         "yaml",
         "toml",
         "graphql",
-        "zig",
 
         -- low level
         "c",
         "cpp",
         "zig",
+        "rust",
+        "go",
       },
     },
   },
@@ -82,6 +79,15 @@ return {
     end,
   },
   {
+    "nvim-tree/nvim-tree.lua",
+    cmd = { "NvimTreeToggle", "NvimTreeFocus" },
+    opts = {
+      git = {
+        enable = false,
+      },
+    },
+  },
+  {
     "kdheepak/lazygit.nvim",
     cmd = {
       "LazyGit",
@@ -104,10 +110,10 @@ return {
       require("neo-tree").setup {
         close_if_last_window = true,
         popup_border_style = "solid",
-        enable_git_status = true,
         enable_modified_markers = true,
         enable_diagnostics = true,
         sort_case_insensitive = true,
+        enable_git_status = false,
         default_component_configs = {
           indent = {
             with_markers = true,
@@ -199,11 +205,56 @@ return {
     "razak17/tailwind-fold.nvim",
     cmd = {
       "TailwindFoldToggle",
+      "TailwindFoldEnable",
+      "TailwindFoldDisable",
+    },
+    opts = {
+      enabled = true,
+      symbol = "󱏿",
     },
     dependencies = { "nvim-treesitter/nvim-treesitter" },
+    ft = { "html", "svelte", "astro", "vue", "typescriptreact", "php", "blade" },
+  },
+  {
+    "luckasRanarison/tailwind-tools.nvim",
+    name = "tailwind-tools",
+    build = ":UpdateRemotePlugins",
+    dependencies = {
+      "nvim-treesitter/nvim-treesitter",
+      "nvim-telescope/telescope.nvim",
+      "neovim/nvim-lspconfig",
+    },
+    cmd = {
+      "TailwindConcealEnable",
+      "TailwindConcealDisable",
+      "TailwindConcealToggle",
+      "TailwindColorEnable",
+      "TailwindColorDisable",
+      "TailwindColorToggle",
+      "TailwindSort",
+      "TailwindSortSelection",
+      "TailwindNextClass",
+      "TailwindSortSelection",
+    },
     config = function()
-      require("tailwind-fold").setup() {
-        ft = { "html", "svelte", "astro", "vue", "typescriptreact", "php", "blade" },
+      require("tailwind-tools").setup()
+    end,
+  },
+  {
+    "folke/zen-mode.nvim",
+    cmd = {
+      "ZenMode",
+    },
+    config = function()
+      require("zen-mode").setup {
+        window = {
+          backdrop = 0.95,
+          width = 120,
+          height = 1,
+          options = {
+            number = true,
+          },
+        },
       }
     end,
   },

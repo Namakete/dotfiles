@@ -11,9 +11,15 @@ map("n", "<leader>q", "<cmd>Trouble diagnostics toggle<CR>", { desc = "Trouble d
 -- NvimTree
 map("n", "<F2>", "<cmd>NvimTreeToggle<CR>", { desc = "Nvimtree Toggle window" })
 
+-- ZenMode 
+map("n", "<leader>zm", "<cmd>ZenMode<CR>", { desc = "Zen Mode" })
+
 -- Comment
 map("n", "<leader>/", "gcc", { desc = "comment toggle", remap = true })
 map("v", "<leader>/", "gc", { desc = "comment toggle", remap = true })
+
+-- Remap
+map("v", "<CR>c", "Esc")
 
 -- NeoTree
 map("n", "<leader>e", "<cmd>Neotree toggle float<CR>", { desc = "NeoTree Toggle Window" })
