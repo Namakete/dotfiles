@@ -8,4 +8,4 @@ packages=(
 
 install_packages "${packages[@]}"
 
-ln -s "$HOME/personal-dotfiles/tmux" "$HOME/.config/tmux"
+ln -s "$(pwd)/tmux" "$HOME/.config/tmux"

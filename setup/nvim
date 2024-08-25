@@ -8,4 +8,4 @@ packages=(
 
 install_packages "${packages[@]}"
 
-ln -s "$HOME/personal-dotfiles/nvim" "$HOME/.config/nvim"
+ln -s "$(pwd)/nvim" "$HOME/.config/nvim"
