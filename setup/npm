@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+
+source ./util
+
+packages=(
+    "node"
+    "yarn"
+)
+
+npm_packages=(
+    "typescript"
+)
+
+install_packages "${packages[@]}"
+
+if _is_package_installed "npm"; then
+    npm install -g "${npm_packages[@]}"
+else
+    echo "npm is not installed"
+fi

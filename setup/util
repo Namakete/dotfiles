@@ -1,0 +1,43 @@
+#!/usr/bin/env bash
+
+_is_package_installed() {
+    command -v "$1" &>/dev/null
+}
+
+_install_brew() {
+    if ! _is_package_installed "brew"; then
+        /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+        if ! _is_package_installed "brew"; then
+            return 1
+        fi
+    fi
+}
+
+_install_missing_items() {
+    local install_command="$1"
+    shift
+    local missing_items=()
+
+    for item in "$@"; do
+        if ! _is_package_installed "$item"; then
+            missing_items+=("$item")
+        fi
+    done
+
+    if [ ${#missing_items[@]} -eq 0 ]; then
+        echo "All required items are installed."
+    else
+        echo "Installing missing items: ${missing_items[*]}"
+        $install_command "${missing_items[@]}"
+    fi
+}
+
+install_packages() {
+    _install_brew || return 1
+    _install_missing_items "brew install" "$@"
+}
+
+install_apps() {
+    _install_brew || return 1
+    _install_missing_items "brew install --cask" "$@"
+}

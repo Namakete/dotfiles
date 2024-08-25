@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+
+source './util'
+
+packages=(
+    "arc"
+    "visual-studio-code"
+    "google-chrome"
+    "iterm2"
+    "postman"
+    "mongodb-compass"
+    "orbstack"
+    "warp"
+    "raycast"
+    "notion"
+    "notion-calendar"
+    "rectangle"
+    "discord"
+    "figma"
+)
+
+install_apps "${packages[@]}"

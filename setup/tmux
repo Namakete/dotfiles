@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+source ./util
+
+packages=(
+    "tmux"
+)
+
+install_packages "${packages[@]}"
+
+ln -s "$HOME/personal-dotfiles/tmux" "$HOME/.config/tmux"

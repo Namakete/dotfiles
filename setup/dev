@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+source ./util
+
+packages=(
+    "git"
+    "lazygit"
+    "lazynpm"
+    "lazydocker"
+)
+
+install_packages "${packages[@]}"
