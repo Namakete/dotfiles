@@ -1,7 +1,0 @@
-#!/usr/bin/env zsh
-
-if ! command -v nvim &>/dev/null; then
-    echo "Tmux not found"
-else
-    #setup will be here ...
-fi

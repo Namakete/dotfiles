@@ -1,7 +1,0 @@
-#!/usr/bin/env zsh
-
-if ! command -v zsh &>/dev/null; then
-    echo "Zsh not found"
-else
-    #setup will be here ...
-fi

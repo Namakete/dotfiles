@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+source ./util
+
+packages=(
+    "zsh"
+)
+
+install_packages "${packages[@]}"
+
+ln -s "$HOME/personal-dotfiles/.zshrc" "$HOME/.zshrc"
